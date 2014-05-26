@@ -17,11 +17,11 @@ feature "Vistor has certain capabilities" do
 
     #When I visit the posts page,
     visit posts_path
-save_and_open_page
     click_on "New Post"
 
     #Then I will be redirected to the User Sign-in page.
-    assert_redirected_to user_session_path
+    #assert_redirected_to user_session_path
+    page.text.must_include("Sign in")
   end
 
   # scenario "As a Visitor, I cannot type a URL and get access to new posts page" do
