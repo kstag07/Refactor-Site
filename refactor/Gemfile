@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
+
 gem 'devise'
+gem 'pundit'
+gem 'minitest-rails'
+gem 'rake'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
@@ -24,7 +28,20 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :development do
+  gem 'spring'
+  gem 'pry-rails'
+  gem 'pry-nav'
+  gem 'pry-stack_explorer'
+end
+# Gems we added
+group :test do
+  gem 'minitest-rails-capybara'
+  gem 'pry-rails'
+  gem 'pry-nav'
+  gem 'pry-stack_explorer'
+end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
