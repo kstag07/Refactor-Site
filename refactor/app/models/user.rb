@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, foreign_key: "author_id"
+  belongs_to :role
+  before_create :set_default_role
 
   def author?
     role == 'author'
@@ -13,4 +15,8 @@ class User < ActiveRecord::Base
     role == 'mod'
   end
 
+private
+  def set_default_role
+    self.role ||= Role.find_by_name('author')
+  end
 end

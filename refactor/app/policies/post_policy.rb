@@ -18,11 +18,7 @@ class PostPolicy < ApplicationPolicy
 
   class Scope < Struct.new(:user, :scope)
     def resolve
-      if user.present? && user.mod?
-        scope.all
-      else user.present? && user.author?
-        scope.where(:author => user)
-      end
+      scope.all
     end
   end
 end
