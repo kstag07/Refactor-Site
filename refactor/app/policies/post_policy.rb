@@ -9,7 +9,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    @user.present? && (@user.mod? || @user.author? && @user == @post.author)
+    @user.present? && (@user.mod? || (@user.author? && @user == @post.author))
   end
 
   def destroy?
