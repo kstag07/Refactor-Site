@@ -24,14 +24,5 @@ feature "Vistor has certain capabilities" do
     page.text.must_include("Sign in")
   end
 
-  # scenario "As a Visitor, I cannot type a URL and get access to new posts page" do
-  #   #Given that I am not signed in,
-
-  #   #When I visit the posts page,
-  #   visit posts_path
-
-  #   # and I cannot get access to a New Post page.
-  #   assert_redirected_to posts_path
-  # end
 end
 

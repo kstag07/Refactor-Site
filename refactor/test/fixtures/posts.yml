@@ -1,4 +1,14 @@
 test_post:
   title: Test title
   body: Test body
-  author: Test author
+  author: author_user
+
+post_by_mod:
+  title: Test title by moderator
+  body: Body by moderator
+  author: mod_user
+
+post_by_author:
+  title: Test title by author
+  body: Body by author
+  author: author_user
