@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         @post.comments << @comment
-        format.html { redirect_to @post, notice: 'Comment was successfully submitted.' }
+        format.html { redirect_to @post, notice: 'Refactor was successfully submitted.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :show }
@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @post, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @post, notice: 'Refactor was successfully updated.' }
          current_user.posts << @post
         format.json { render :show, status: :ok, location: @post }
       else
@@ -54,7 +54,7 @@ private
   end
 
   def set_comment
-    @comment = Comment.find(params[:post_id])
+    @comment = Comment.find(params[:id])
    end
 
    def comment_params
