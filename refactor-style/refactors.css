@@ -27,7 +27,12 @@ header {
 
 .nav a {
   text-decoration: none;
-  font-size: 1.618em
+  font-size: 1.618em;
+}
+
+.nav a {
+  font-size: 1.618em;
+  color: white;
 }
 
 .search {
@@ -63,3 +68,5 @@ vertical-align: bottom;
 .signup {
   color: #da6869;
 }
+
+
