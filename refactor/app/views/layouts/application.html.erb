@@ -5,6 +5,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+<<<<<<< HEAD
     <!-- This is the Max generated html -->
     <meta charset="utf-8">
     <meta name="decription" content="Live Project View">
@@ -17,6 +18,21 @@
     <%= stylesheet_link_tag 'reset', 'refactors' %>
     <!-- <link rel="stylesheet" type="text/css" href="../Refactor-Site/refactor/app/assets/stylesheets/reset.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="../Refactor-Site/refactor/app/assets/stylesheets/refactors.css"> -->
+=======
+  </head>
+  <body>
+    <div>
+      <% if current_user.present? %>
+        Signed in as <%= current_user.name %> Not you?
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> / <%= link_to "Sign in", new_user_session_path %>
+      <% end %>
+
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+>>>>>>> e07a242dd319d94cf07f02ab54096a62ec90a101
 
   </head>
   <body class="flex-container">

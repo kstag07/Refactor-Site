@@ -64,8 +64,90 @@ vertical-align: bottom;
   color: #da6869;
 }
 
+.dropnav {
+  display: none;
+}
+
 @media all and (max-width: 54em) {
   .nav {
     display: none;
   }
+
+  .dropnav {
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  /*This is the Drop Nav Menu that will only be displayed on media < 800px*/
+
+  .menu-icon{
+  fill: #435c6e;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+.sitenav-button img{
+  vertical-align: middle;
+}
+
+.sitenav-button:hover > .sitenav-list{
+  display:block;
+}
+
+.sitenav-button:hover .menu-icon{
+  fill: #FFFFFF;
+}
+
+/** For topnav items **/
+.sitenav{
+  display: inline-block;
+  padding-right: 1.3em;
+  height: 1em;
+  padding-top: 10%;
+}
+/** For dropdown sitenav bar **/
+.sitenav-list{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(67, 92, 110, 0.9); /* hex#435c6e with 0.9 opacity*/
+  display: none;
+  padding: 1em;
+}
+
+.sitenav-list::before{
+  content:"";
+  display: block;
+  position: absolute;
+  top: -13px;
+  right: 23px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid black;
+}
+
+.sitenav-listitem{
+  padding: 15px 10px;
+  border-top: 1px solid #FFFFFF;
+  cursor: pointer;
+}
+
+.sitenav-listitem:last-child{
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.sitenav-listitem a{
+  color: #FFFFFF;
+}
+
+.sitenav-listitem:hover{
+  background: #F3AC13;
+}
+
+.sitenav-listitem:hover a{
+  color: #435c6e;
+}
 }
