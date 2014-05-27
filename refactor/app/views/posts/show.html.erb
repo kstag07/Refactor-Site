@@ -7,7 +7,7 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @post.body %>
+  <%= markdown @post.body %>
 </p>
 
 <p>
@@ -20,7 +20,7 @@
       <tr>
         <% if !comment.new_record? %>
           <td>Author: <%= comment.author %>
-          <td>Refactor:  <%= comment.content %></td>
+          <td>Refactor:  <%= markdown comment.content %></td>
           <td><%= link_to 'Edit', edit_post_comment_path(@post, comment) %></td>
           <td><%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
         <% end %>
