@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Post history <%= current_user.email %> </h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Posts</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.title, post_path(post) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>  
+
+<%= link_to 'Back', posts_path %>
