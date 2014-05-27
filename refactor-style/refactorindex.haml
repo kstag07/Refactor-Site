@@ -1,0 +1,26 @@
+!!!
+%html{:lang => "en-us"}
+  %head
+    %meta{:charset => "utf-8"}
+      %title Max Brockman
+      %meta{:content => "Live Project View", :name => "decription"}
+        %link{:href => "css/normalize.css", :rel => "stylesheet"}
+          / import fonts
+          %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400,600", :rel => "stylesheet", :type => "text/css"}
+            %link{:href => "http://fonts.googleapis.com/css?family=Arvo:400,700", :rel => "stylesheet", :type => "text/css"}
+              %link{:href => "http://fonts.googleapis.com/css?family=Droid+Sans+Mono", :rel => "stylesheet", :type => "text/css"}
+                / link to stylesheets
+                %link{:href => "refactor-style/reset.css", :rel => "stylesheet", :type => "text/css"}
+                  %link{:href => "refactor-style/refactors.css", :rel => "stylesheet", :type => "text/css"}
+  %body.flex-container
+    %header.flex-header
+      %a{:href => "refactorsindex.html"}
+        %img.logo{:src => "REFACTORS_LOGO.svg"}/
+      %nav.nav
+        %form.searchbox{:action => ""}
+          %input.search{:placeholder => "Search", :type => "text"}
+            %img.submit{:src => "magnifying-glass.svg", :type => "submit"}
+        .account
+          %a.login{:href => ""} Login |
+          %a.signup{:href => ""} | Sign Up
+    %footer
