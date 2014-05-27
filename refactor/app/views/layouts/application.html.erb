@@ -5,19 +5,43 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <div>
-      <% if current_user.present? %>
-        Signed in as <%= current_user.email %> Not you?
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> / <%= link_to "Sign in", new_user_session_path %>
-      <% end %>
-    </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!-- This is the Max generated html -->
+    <meta charset="utf-8">
+    <meta name="decription" content="Live Project View">
+    <!-- import fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
 
-    <%= yield %>
+    <!-- link to stylesheets -->
+    <%= stylesheet_link_tag 'reset', 'refactors' %>
+    <!-- <link rel="stylesheet" type="text/css" href="../Refactor-Site/refactor/app/assets/stylesheets/reset.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../Refactor-Site/refactor/app/assets/stylesheets/refactors.css"> -->
+
+  </head>
+  <body class="flex-container">
+    <header class="flex-header">
+      <a href=""><%= image_tag("REFACTORS_LOGO.svg", :class => 'logo') %></a>
+      <nav class="nav">
+        <form class="searchbox" action="">
+          <input class="search" type="text" placeholder="Search">
+          <%= image_tag("magnifying-glass.svg", :class => 'submit') %>
+        </form>
+        <div class="account">
+          <% if current_user.present? %>
+            Signed in as <%= current_user.email %> Not you?
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign up |", new_user_registration_path, :class => "signup" %>
+            <%= link_to "| Sign in", new_user_session_path, :class => "login" %>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+    <section>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </section>
   </body>
 </html>
