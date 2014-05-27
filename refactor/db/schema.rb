@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140526211852) do
+ActiveRecord::Schema.define(version: 20140527165502) do
 
   create_table "comments", force: true do |t|
     t.string   "author"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20140526211852) do
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+
+  create_table "indentities", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "indentities", ["user_id"], name: "index_indentities_on_user_id"
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -55,6 +65,10 @@ ActiveRecord::Schema.define(version: 20140526211852) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role",                   default: "author"
+    t.integer  "role_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
