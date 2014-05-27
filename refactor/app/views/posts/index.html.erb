@@ -12,6 +12,7 @@
     <% @posts.each do |post| %>
       <tr id="<%= dom_id(post) %>">
         <td><%= link_to post.title, post %></td>
+        <td>Posted by: <%= post.author.name %></td>
         <% if policy(post).update? %>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <% end %>

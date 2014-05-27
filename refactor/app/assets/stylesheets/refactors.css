@@ -14,7 +14,7 @@ header {
 
 .logo {
   width: 15em;
-  padding: 1em 1em 0em 1em;
+  padding: 0em 1em 0em 1em;
 }
 
 .nav{
@@ -25,9 +25,11 @@ header {
   padding-right: .5em;
 }
 
-.nav a {
-  text-decoration: none;
-  font-size: 1.618em;
+.account {
+  display: flex;
+  align-content: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 .search {
@@ -58,17 +60,21 @@ vertical-align: bottom;
 
 .login {
   color: #51b5af;
+  font-size: 2em;
+  text-decoration: none;
 }
 
 .signup {
   color: #da6869;
+  font-size: 2em;
+  text-decoration: none;
 }
 
 .dropnav {
   display: none;
 }
 
-@media all and (max-width: 54em) {
+@media all and (max-width: 58em) {
   .nav {
     display: none;
   }
