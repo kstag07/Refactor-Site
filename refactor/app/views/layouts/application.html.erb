@@ -7,6 +7,10 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+ <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+  <%= submit_tag "Search", :title => nil %>
+<% end %>
     <div>
       <% if current_user.present? %>
         Signed in as <%= current_user.name %> Not you?
