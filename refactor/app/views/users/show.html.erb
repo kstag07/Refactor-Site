@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Post history <%= current_user.email %> </h2>
+<h2> Post History for: <%= current_user.email %> </h2>
 
 <table>
   <thead>
@@ -12,10 +12,29 @@
   <tbody>
     <% @user.posts.each do |post| %>
       <tr>
-        <td><%= link_to post.title, post_path(post) %></td>
+        <td><%= post.body %></td>
       </tr>
     <% end %>
   </tbody>
 </table>  
 
-<%= link_to 'Back', posts_path %>
+<h2> Comment History for: <%= current_user.email %> </h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comments</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.content %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>  
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
