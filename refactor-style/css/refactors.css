@@ -1,6 +1,7 @@
 header {
   background-color: #3c4a5b;
-  height: auto;
+  height: 4.73em;
+  border-bottom: .2em solid #51b5af;
 }
 
 .flex-header {
@@ -12,9 +13,8 @@ header {
 }
 
 .logo {
-  width: 12em;
-  height: 4em;
-  padding: .5em .5em .2em .5em;
+  width: 15em;
+  padding: 1em 1em 0em 1em;
 }
 
 .nav{
@@ -28,11 +28,6 @@ header {
 .nav a {
   text-decoration: none;
   font-size: 1.618em;
-}
-
-.nav a {
-  font-size: 1.618em;
-  color: white;
 }
 
 .search {
@@ -69,4 +64,8 @@ vertical-align: bottom;
   color: #da6869;
 }
 
-
+@media all and (max-width: 54em) {
+  .nav {
+    display: none;
+  }
+}
