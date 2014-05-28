@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Refactor</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
@@ -15,24 +14,32 @@
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
 
     <!-- link to stylesheets -->
-    <%= stylesheet_link_tag 'reset', 'refactors' %>
-    <!-- <link rel="stylesheet" type="text/css" href="../Refactor-Site/refactor/app/assets/stylesheets/reset.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="../Refactor-Site/refactor/app/assets/stylesheets/refactors.css"> -->
+    <%= stylesheet_link_tag 'reset', 'refactors', 'base.css', media: "all", "data-turbolinks-track" => true %>
 
   </head>
   <body class="flex-container">
     <header class="flex-header">
-      <a href=""><%= image_tag("REFACTORS_LOGO.svg", :class => 'logo') %></a>
+      <%= link_to root_path, :class => 'logo' do %> 
+        <%= image_tag("REFACTORS_LOGO.svg", :class => 'logo') %>
+      <% end %> 
+
       <nav class="nav">
 
           <%= form_tag(posts_path, class: "searchbox", method: "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], class: "search", type: "text", placeholder: "Search Posts" %>
+            <%= text_field_tag :search, params[:search], class: "search", type: "text", placeholder: "Search" %>
             <%= submit_tag("Search", :title => nil) %>
+            <!-- <svg  class="submit" type="submit" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"  enable-background="new 0 0 19.28 19.28" xml:space="preserve">
+              <g>
+                <circle opacity="0.75" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-miterlimit="10" cx="7" cy="7" r="6.3"/>
+
+                  <line opacity="0.75" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-miterlimit="10" x1="13.3" y1="13.3" x2="18.8" y2="18.8"/>
+              </g>
+            </svg> -->
           <% end %>
 
         <div class="account">
           <% if current_user.present? %>
-            Signed in as <%= current_user.email %> Not you?
+            Signed in as <%= current_user.email %> Not you? 
             <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
           <% else %>
             <%= link_to "Sign up |", new_user_registration_path, :class => "signup" %>
@@ -48,3 +55,15 @@
     </section>
   </body>
 </html>
+
+<!-- 
+<nav class="nav">
+        <form class="searchbox" action="">
+          <input class="search" type="text" placeholder="Search">
+          <img src="../Refactor-Style/Assets/svg/magnifying-glass.svg" class="submit" type="submit">
+        </form>
+        <div class="account">
+          <a class="login" href="">Login |</a>
+          <a class="signup" href="">| Sign Up</a>
+        </div>
+      </nav> -->

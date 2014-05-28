@@ -1,32 +1,66 @@
-<h1>Listing posts</h1>
+<!DOCTYPE html>
+<html>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Posted by</th>
-      <th>Language</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<head>
+  <title></title>
+  <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'reset.css', 'module.css', 'base.css', 'layout.css', 'typography.css', 
+  media: "all", "data-turbolinks-track" => true %>
+</head>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr id="<%= dom_id(post) %>">
-        <td><%= link_to post.title, post %></td>
-        <td><%= post.author.name %></td>
-        <td><%= Post::LANGUAGE_OPTIONS[post.language] %></td>
-        <% if policy(post).update? %>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+<body>
+
+  <% unless current_user.present? %>
+    <section class="hero">
+      <h3>Refactors</h3>
+      <h3>Because every line of code is an opportunity for optimization.</h3>
+      <p>Refactors is a community of like-minded coders seeking to improve their code together.
+      <p>Post code to be refactored or browse code to refactor and help each other.</p>
+      <a href="#">Post a refactor</a>
+    </section>
+  <% end %>
+
+  <main class="flex-main">
+    <article>
+
+      <section class="flex-filter">
+        <h4>Latest Refactors</h4>
+        <!-- This form will filter posts by language -->
+        <div class="filter">
+          <select name="State" id="input7">
+            <option value="Choice" class="choice">Choose a language</option>
+            <option value="C#">C#</option>
+            <option value="CSS">CSS</option>
+            <option value="HTML">HTML</option>
+            <option value="JS">JS</option>
+            <option value="PYTHON">PYTHON</option>
+            <option value="RUBY">RUBY</option>
+          </select>
+        </div>
+      </section>
+
+      <div class="flex-postcontainer">
+
+        <% @posts.each do |post| %>
+          <section class="refactorpost", id="<%= dom_id(post) %>">
+            <div class="flex-vote">
+              <a href="#" class="voteup">Up</a>
+              <span class="votecounter">Count</span>
+              <a href="#" class="votedown">Down</a>
+            </div>
+            <div class="flex-posttitle">
+              <h3><%= link_to post.title, post %></h3>
+              <h4>By: <%= post.author.name %></h4>
+              <a href="#" class="htmltag"></a>
+            </div>
+          </section>
         <% end %>
-        <% if policy(post).destroy? %>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+      </div>
+      
+    </article>
+  </main>
+  <footer>
+    <p>Copyright Refactors © 2014</p>
+  </footer>
+</body>
+</html>
