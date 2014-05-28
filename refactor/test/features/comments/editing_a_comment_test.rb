@@ -5,7 +5,6 @@ feature 'As a author I want to be able to edit my own comments so that I can cha
     sign_in(:author_user)
     visit root_path
     click_on 'Testing'
-    save_and_open_page
     page.find('tr', :text => 'What it is').click_on "Edit"
     fill_in "Content", with: "New comment"
     click_on "Add Refactor"
