@@ -2,8 +2,8 @@
 
 <div>
   <%= form_tag(posts_path, class: "filterbox", method: "get", id: "filter-form") do %>
-    <%= text_field_tag :filter, params[:filter], class: "filter", placeholder: "Filter Language" %>
-    <%= submit_tag("Filter", :language => nil) %>
+    <%= select_tag(:filter, options_for_select(Post::LANGUAGE_OPTIONS)) %>
+    <%= submit_tag("Filter") %>
   <% end %>
 </div>
 
