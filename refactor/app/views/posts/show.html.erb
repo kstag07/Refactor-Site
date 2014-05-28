@@ -20,17 +20,17 @@
 </p>
 <table>
   <tbody>
+    <tr>
     <% @post.comments.each do |comment| %>
-      <tr>
         <% if !comment.new_record? %>
-          <td>Author: <%= comment.author %>
-          <td>Refactor:  <%= markdown comment.content %></td>
+          <td>Author: <%= comment.author.name %></td>
+          <td>Refactor: <%= markdown comment.content %></td>
           <% if current_user.present? && (current_user.mod? || (current_user.author? &&   @post.author == current_user)) %>
           <td><%= link_to 'Edit', edit_post_comment_path(@post, comment) %></td>
           <td><%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-          <% end %>
         <% end %>
       <% end %>
+    <% end %>
     </tr>
   </tbody>
 </table>
