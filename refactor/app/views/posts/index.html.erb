@@ -16,7 +16,7 @@
       <h3>Because every line of code is an opportunity for optimization.</h3>
       <p>Refactors is a community of like-minded coders seeking to improve their code together.
       <p>Post code to be refactored or browse code to refactor and help each other.</p>
-      <a href="#">Post a refactor</a>
+      <%= link_to 'Post a refactor', new_post_path %>
     </section>
   <% end %>
 
@@ -37,6 +37,9 @@
             <option value="RUBY">RUBY</option>
           </select>
         </div>
+      </section>
+      <section class="flex-filter">
+          <%= link_to 'New Post', new_post_path %>
       </section>
 
       <div class="flex-postcontainer">
