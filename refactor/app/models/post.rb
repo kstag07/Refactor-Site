@@ -39,7 +39,12 @@ class Post < ActiveRecord::Base
 
   validates_inclusion_of :language, :in => LANGUAGE_OPTIONS
 
-  def self.search(query)
-    where("title like ?", "%#{query}%")
+  def self.search(search)
+    if search
+      Post.where("title LIKE ? OR language LIKE ?", "%#{search}%", "%#{search}%")
+    else
+      Post.all
+    end
   end
+
 end
