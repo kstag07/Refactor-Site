@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
   has_many :comments
 
   def self.search(query)
-  where("title like ?", "%#{query}%")
-end
+    where("title like ?", "%#{query}%")
+  end
+
+
 end
