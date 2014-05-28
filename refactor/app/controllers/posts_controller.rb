@@ -5,11 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = policy_scope(Post)
-    if params[:search]
-      @posts = Post.search(params[:search]).order("created_at DESC")
-    else
-      @posts = Post.all.order('created_at DESC')
-    end
+    @posts = Post.search(params[:search])
   end
 
   # GET /posts/1
