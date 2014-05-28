@@ -5,7 +5,11 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = policy_scope(Post)
-    @posts = Post.search(params[:search])
+    if params[:filter]
+      @posts = Post.filter(params[:filter])
+    else
+      @posts = Post.search(params[:search])
+    end
   end
 
   # GET /posts/1

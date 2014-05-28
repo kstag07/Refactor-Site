@@ -1,5 +1,12 @@
 <h1>Listing posts</h1>
 
+<div>
+  <%= form_tag(posts_path, class: "filterbox", method: "get", id: "filter-form") do %>
+    <%= text_field_tag :filter, params[:filter], class: "filter", placeholder: "Filter Language" %>
+    <%= submit_tag("Filter", :language => nil) %>
+  <% end %>
+</div>
+
 <table>
   <thead>
     <tr>

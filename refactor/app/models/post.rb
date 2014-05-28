@@ -47,4 +47,8 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def self.filter(filter)
+    Post.where("language LIKE ?", "%#{filter}%")
+  end
+
 end
