@@ -91,69 +91,69 @@ vertical-align: bottom;
   vertical-align: middle;
   width: 20px;
   height: 20px;
-}
+  }
 
-.sitenav-button img{
-  vertical-align: middle;
-}
+  .sitenav-button img{
+    vertical-align: middle;
+  }
 
-.sitenav-button:hover > .sitenav-list{
-  display:block;
-}
+  .sitenav-button:hover > .sitenav-list{
+    display:block;
+  }
 
-.sitenav-button:hover .menu-icon{
-  fill: #FFFFFF;
-}
+  .sitenav-button:hover .menu-icon{
+    fill: #FFFFFF;
+  }
 
-/** For topnav items **/
-.sitenav{
-  display: inline-block;
-  padding-right: 1.3em;
-  height: 1em;
-  padding-top: 10%;
-}
-/** For dropdown sitenav bar **/
-.sitenav-list{
-  width: 100%;
-  position: absolute;
-  top: 0;
-  background: rgba(67, 92, 110, 0.9); /* hex#435c6e with 0.9 opacity*/
-  display: none;
-  padding: 1em;
-}
+  /** For topnav items **/
+  .sitenav{
+    display: inline-block;
+    padding-right: 1.3em;
+    height: 1em;
+    padding-top: 10%;
+  }
+  /** For dropdown sitenav bar **/
+  .sitenav-list{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(67, 92, 110, 0.9); /* hex#435c6e with 0.9 opacity*/
+    display: none;
+    padding: 1em;
+  }
 
-.sitenav-list::before{
-  content:"";
-  display: block;
-  position: absolute;
-  top: -13px;
-  right: 23px;
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid black;
-}
+  .sitenav-list::before{
+    content:"";
+    display: block;
+    position: absolute;
+    top: -13px;
+    right: 23px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid black;
+  }
 
-.sitenav-listitem{
-  padding: 15px 10px;
-  border-top: 1px solid #FFFFFF;
-  cursor: pointer;
-}
+  .sitenav-listitem{
+    padding: 15px 10px;
+    border-top: 1px solid #FFFFFF;
+    cursor: pointer;
+  }
 
-.sitenav-listitem:last-child{
-  border-bottom: 1px solid #FFFFFF;
-}
+  .sitenav-listitem:last-child{
+    border-bottom: 1px solid #FFFFFF;
+  }
 
-.sitenav-listitem a{
-  color: #FFFFFF;
-}
+  .sitenav-listitem a{
+    color: #FFFFFF;
+  }
 
-.sitenav-listitem:hover{
-  background: #F3AC13;
-}
+  .sitenav-listitem:hover{
+    background: #F3AC13;
+  }
 
-.sitenav-listitem:hover a{
-  color: #435c6e;
-}
+  .sitenav-listitem:hover a{
+    color: #435c6e;
+  }
 }
