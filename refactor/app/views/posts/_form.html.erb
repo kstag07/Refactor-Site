@@ -16,6 +16,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :language %><br>
+    <%= f.collection_select(:language, Post::LANGUAGE_OPTIONS, :first, :last) %>
+  </div>
+  <div class="field">
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
