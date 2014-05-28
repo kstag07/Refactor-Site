@@ -19,16 +19,17 @@
     <!-- <link rel="stylesheet" type="text/css" href="../Refactor-Site/refactor/app/assets/stylesheets/reset.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="../Refactor-Site/refactor/app/assets/stylesheets/refactors.css"> -->
 
-
   </head>
   <body class="flex-container">
     <header class="flex-header">
       <a href=""><%= image_tag("REFACTORS_LOGO.svg", :class => 'logo') %></a>
       <nav class="nav">
-        <form class="searchbox" action="">
-          <input class="search" type="text" placeholder="Search">
-          <%= image_tag("magnifying-glass.svg", :class => 'submit') %>
-        </form>
+
+          <%= form_tag(posts_path, class: "searchbox", method: "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], class: "search", type: "text", placeholder: "Search Posts" %>
+            <%= submit_tag("Search", :title => nil) %>
+          <% end %>
+
         <div class="account">
           <% if current_user.present? %>
             Signed in as <%= current_user.email %> Not you?

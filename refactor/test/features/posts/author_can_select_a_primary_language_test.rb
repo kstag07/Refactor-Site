@@ -7,11 +7,11 @@ feature 'As an Author I want to to be able select the code language' do
     click_on "New Post"
     fill_in "Title", with: posts(:post_by_author).title
     fill_in "Body", with: posts(:post_by_author).body
-    find('#post_language').find(:xpath, 'option[2]').select_option
+    find('#post_language').find(:xpath, 'option[5]').select_option
     # fill_in "language", with: "C++"
     click_on "Create Post"
     page.text.must_include "C++"
-    save_and_open_page
+
     click_on "Back"
     page.text.must_include "C++"
   end

@@ -22,7 +22,6 @@ feature "As a user, I want to sign into my account to access my settings and pos
                             info: { nickname: 'test_twitter_user'},
                             })
     click_on "Sign in with Twitter"
-    save_and_open_page
     page.must_have_content "test_twitter_user, you are signed in!"
     # Courtesy of: https://gist.github.com/ivanoats/7071730
     # with help from https://github.com/intridea/omniauth/wiki/Integration-Testing
@@ -40,7 +39,6 @@ feature "As a user, I want to sign into my account to access my settings and pos
                             info: { nickname: 'test_github_user'},
                             })
     click_on "Sign in with Github"
-    save_and_open_page
     page.must_have_content "test_github_user, you are signed in!"
     # Courtesy of: https://gist.github.com/ivanoats/7071730
     # with help from https://github.com/intridea/omniauth/wiki/Integration-Testing
