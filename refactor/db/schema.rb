@@ -28,12 +28,23 @@ ActiveRecord::Schema.define(version: 20140527220615) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
 
+  create_table "indentities", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "indentities", ["user_id"], name: "index_indentities_on_user_id"
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "author_id"
+    t.string   "language"
   end
 
   create_table "roles", force: true do |t|
@@ -56,6 +67,7 @@ ActiveRecord::Schema.define(version: 20140527220615) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role",                   default: "author"
+    t.integer  "role_id"
     t.string   "provider"
     t.string   "uid"
     t.string   "name"

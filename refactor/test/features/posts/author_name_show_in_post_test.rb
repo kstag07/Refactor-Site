@@ -1,6 +1,6 @@
 require 'test_helper'
 
-feature 'As an Author I wanto to be able to see my name on my posts' do
+feature 'As an Author I want to to be able to see my name on my posts' do
   scenario "Author's username is visible on posts in the index" do
     sign_in(:author_user)
     visit root_path
