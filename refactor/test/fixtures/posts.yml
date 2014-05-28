@@ -15,3 +15,15 @@ post_by_author:
   body: Body by author
   author: author_user
   language: ruby
+
+ruby_post:
+  title: A post in ruby
+  body: asdfasd
+  author: author_user
+  language: ruby
+
+js_post:
+  title: A post in javascript
+  body:  aalkj;jasdfa
+  author: author_user
+  language: javascript
