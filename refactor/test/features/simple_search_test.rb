@@ -6,13 +6,15 @@ feature "As a visitor I want to be able to search for a a varities of features o
     fill_in "Search Posts", with: "author"
     click_on "Search"
     page.text.must_include "author"
-    save_and_open_page
     page.text.wont_include "moderator"
   end
 
   scenario 'searching for a name' do
     visit posts_path
-    fill_in "Search Posts"
+    fill_in "Search Posts", with: "Ruby"
+    click_on "Search"
+    page.text.must_include "Ruby"
+    page.text.wont_include "C++"
   end
 end
 
