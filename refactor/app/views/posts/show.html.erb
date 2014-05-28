@@ -13,6 +13,12 @@
 <p>
   <strong>Posted by:</strong>
   <%= @post.author.name %>
+</p>
+
+</p>
+  <strong>Language:</strong>
+  <%= Post::LANGUAGE_OPTIONS[@post.language] %>
+</p>
 
 <p>
   <strong>Refactor</strong>
@@ -22,10 +28,10 @@
   <tbody>
     <tr>
     <% @post.comments.each do |comment| %>
-        <% if !comment.new_record? %>
-          <td>Author: <%= comment.author.name %></td>
-          <td>Refactor: <%= markdown comment.content %></td>
-          <% if current_user.present? && (current_user.mod? || (current_user.author? &&   @post.author == current_user)) %>
+      <% if !comment.new_record? %>
+        <td>Author: <%= comment.author.name %></td>
+        <td>Refactor: <%= markdown comment.content %></td>
+        <% if current_user.present? && (current_user.mod? || (current_user.author? &&   @post.author == current_user)) %>
           <td><%= link_to 'Edit', edit_post_comment_path(@post, comment) %></td>
           <td><%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
         <% end %>
@@ -36,8 +42,8 @@
 </table>
 
 <p>
-<% if current_user.present? && (current_user.mod? || (current_user.author? &&   @post.author == current_user)) %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<% end %>
-<%= link_to 'Back', posts_path %>
+  <% if current_user.present? && (current_user.mod? || (current_user.author? &&  @post.author == current_user)) %>
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+  <% end %>
+  <%= link_to 'Back', posts_path %>
 </p>
