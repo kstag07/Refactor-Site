@@ -2,7 +2,7 @@
 
 <div>
   <%= form_tag(posts_path, class: "filterbox", method: "get", id: "filter-form") do %>
-    <%= select_tag(:filter, options_for_select(Post::LANGUAGE_OPTIONS)) %>
+    <%= select_tag(:filter, options_from_collection_for_select(Post::LANGUAGE_OPTIONS, :first, :last), {include_blank: true}) %>
     <%= submit_tag("Filter") %>
   <% end %>
 </div>
