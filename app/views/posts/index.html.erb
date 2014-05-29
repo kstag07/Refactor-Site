@@ -42,13 +42,21 @@
         <% @posts.each do |post| %>
           <section class="refactorpost", id="<%= dom_id(post) %>">
             <div class="flex-vote">
-              <a href="#" class="voteup">Up</a>
-              <span class="votecounter">Count</span>
-              <a href="#" class="votedown">Down</a>
+              <a href="#">
+                <svg class="voteup" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 26.279 13.502" enable-background="new 0 0 26.279 13.502" xml:space="preserve">
+                <polygon points="0,13.5 13.1,0 26.3,13.5"/>
+                </svg>
+
+              </a>
+              <span class="votecounter">vote count</span>
+              <a href="#" class="votedown"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 26.279 13.502" enable-background="new 0 0 26.279 13.502" xml:space="preserve">
+              <polygon points="26.3,0 13.1,13.5 0,0"/>
+              </svg>
+              </a>
             </div>
             <div class="flex-posttitle">
               <h3><%= link_to post.title, post %></h3>
-              <h4>By: <%= post.author.name %></h4>
+              <h4>By: <%= post.author.name %></h4><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
               <a class="language-tag"><%= Post::LANGUAGE_OPTIONS[post.language] %></a>
             </div>
           </section>
