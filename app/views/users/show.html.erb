@@ -1,4 +1,4 @@
-<h2> Post History for: <%= current_user.email %> </h2>
+<h2> Post History for: <%= current_user.name %> </h2>
 
 <table>
   <thead>
@@ -10,13 +10,13 @@
   <tbody>
     <% @user.posts.each do |post| %>
       <tr>
-        <td><%= post.body %></td>
+        <td><%= link_to post.title, post %></td>
       </tr>
     <% end %>
   </tbody>
-</table>  
+</table>
 
-<h2> Comment History for: <%= current_user.email %> </h2>
+<h2> Comment History for: <%= current_user.name %> </h2>
 
 <table>
   <thead>
@@ -32,6 +32,9 @@
       </tr>
     <% end %>
   </tbody>
-</table>  
+</table>
 
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', root_path %>
+

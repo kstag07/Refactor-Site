@@ -19,9 +19,9 @@
   </head>
   <body class="flex-container">
     <header class="flex-header">
-      <%= link_to root_path, :class => 'logo' do %> 
+      <%= link_to root_path, :class => 'logo' do %>
         <%= image_tag("REFACTORS_LOGO.svg", :class => 'logo') %>
-      <% end %> 
+      <% end %>
 
       <nav class="nav">
           <%= form_tag(posts_path, class: "searchbox", method: "get", id: "search-form") do %>
@@ -38,7 +38,7 @@
 
         <div class="account">
           <% if current_user.present? %>
-            <%= link_to current_user.email, user_path(current_user) %> / 
+            <%= link_to current_user.name, user_path(current_user) %> /
             <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
           <% else %>
             <%= link_to "Sign up |", new_user_registration_path, :class => "signup" %>

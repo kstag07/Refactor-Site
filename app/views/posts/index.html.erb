@@ -4,7 +4,7 @@
 <head>
   <title></title>
   <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag 'reset.css', 'module.css', 'base.css', 'layout.css', 'typography.css', 
+  <%= stylesheet_link_tag 'reset.css', 'module.css', 'base.css', 'layout.css', 'typography.css',
   media: "all", "data-turbolinks-track" => true %>
 </head>
 
@@ -56,13 +56,14 @@
             </div>
             <div class="flex-posttitle">
               <h3><%= link_to post.title, post %></h3>
-              <h4>By: <%= post.author.name %></h4><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <h4>By: <%= link_to post.author.name, user_path(id: post.author) %></h4>
+              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
               <a class="language-tag"><%= Post::LANGUAGE_OPTIONS[post.language] %></a>
             </div>
           </section>
         <% end %>
       </div>
-      
+
     </article>
   </main>
   <footer>
