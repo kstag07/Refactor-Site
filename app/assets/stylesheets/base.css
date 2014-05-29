@@ -19,18 +19,39 @@ footer {
   background-color: #3c4a5b;
 }
 
-.button1 {
+.help {
+  background: url("../Assets/svg/help_icon.svg") no-repeat;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+button, .button {
+  height: 1.7em;
+  padding: .15em 1em;
+  background-color: #14bbb1;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-size: .889em;
+  border: .125em solid #fff;
+  border-radius: .3em;
+  margin: 1em 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+/*.button {
   width: auto;
   height: 1.7em;
   padding: 0 1em;
-  font-size: 2em;
+  font-size: 1em;
   background-color: #14bbb1;
   color: white;
-  font-family: 'Questrial', serif;
+  font-family: 'Open Sans', sans-serif;
   border: .1em solid #14bbb1;
   border-radius: .2em;
   margin: 1em 0;
-}
+}*/
 
 .flex-button{
   display: flex;
@@ -65,32 +86,17 @@ footer {
   width: 100%;
 }
 
-.hero {
-  display: flex;
-  justify-content: center;
-  flex-flow: column wrap;
-  align-items: center;
-  /*text-align: center;*/
-  background-color: #14bbb1;
-}
-
-.hero a {
-  width: 10em;
-  text-align: center;
-  text-decoration: none;
-}
-
 .flex-header {
   display: -webkit-flex;
   display: flex;
-  flex-flow: row wrap;
-  flex-wrap: none;
+  flex-flow: row nowrap;
   justify-content: space-between;
+  height: 2.925em;
 }
 
 .logo {
-  width: 15em;
-  padding: 0em 1em 0em 1em;
+  width: auto;
+  height: 3.9em;
 }
 
 .nav{
@@ -109,7 +115,7 @@ footer {
 
 .search {
   color: white;
-  width: 20em;
+  width: 13em;
   text-decoration: none;
   background: none;
   border-radius: 0;
@@ -117,22 +123,24 @@ footer {
   border-bottom: 2px solid white;
   -webkit-box-shadow: none;
   box-shadow: none;
-  font-size: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: .8em;
 }
 .search:focus {
-  border-bottom: 3px solid #acd34c;
+  border-bottom: 2px solid #acd34c;
   outline: none;
 }
 
 .submit {
 width: 1.1em;
 height: 1.1em;
-padding-bottom: .3em;
+margin: 0 2em .3em 0;
 vertical-align: bottom;
 }
 
 .account {
   padding: 0 2em;
+  font-family:
 }
 
 .login {
