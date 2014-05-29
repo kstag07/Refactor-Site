@@ -23,13 +23,12 @@ feature 'As an Author I want to to be able to see my name on my posts' do
     page.body.must_include users(:author_user).name
   end
 
-  scenario""do
+  scenario "Visitor can see author of posts on Index"do
     visit root_path
     page.text.must_include users(:author_user).name
   end
 
-  scenario"" do
-
+  scenario "Visitor can see author of post on Show page" do
     visit posts_path
     click_on posts(:test_post).title
     page.text.must_include users(:author_user).name
