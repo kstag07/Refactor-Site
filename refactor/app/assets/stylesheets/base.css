@@ -1,7 +1,57 @@
+html, body {
+  height: 100%;
+}
+
+article {
+  width: 75%;
+}
+
 header {
   background-color: #3c4a5b;
-  height: 4.73em;
+  height: 3.72em;
   border-bottom: .2em solid #51b5af;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  color: white;
+  background-color: #3c4a5b;
+}
+
+.minheight {
+ min-height: 30%;
+}
+
+.minheight:after {
+  content: "";
+  display: block;
+}
+
+.flex-main {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-content: center;
+}
+
+.flex-filter {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 3em 0 1em 0;
+  justify-content: space-between;
+  border-bottom: 1px solid #b8babc;
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-content: center;
+  text-align: center;
+  background-color: #14bbb1;
 }
 
 .flex-header {
@@ -14,20 +64,21 @@ header {
 
 .logo {
   width: 15em;
-  padding: 1em 1em 0em 1em;
+  padding: 0em 1em 0em 1em;
 }
 
 .nav{
   display: flex;
   align-content: center;
   flex-flow: row wrap;
+  flex-align: center;
   justify-content: space-between;
   padding-right: .5em;
 }
 
 .nav a {
   text-decoration: none;
-  font-size: 1.618em;
+  font-size: 1em;
 }
 
 .search {
@@ -37,7 +88,7 @@ header {
   background: none;
   border-radius: 0;
   border: transparent;
-  border-bottom: 3px solid white;
+  border-bottom: 2px solid white;
   -webkit-box-shadow: none;
   box-shadow: none;
   font-size: 1em;
@@ -49,6 +100,8 @@ header {
 
 .submit {
 width: 1.1em;
+height: 1.1em;
+padding-bottom: .3em;
 vertical-align: bottom;
 }
 
@@ -69,3 +122,4 @@ vertical-align: bottom;
     display: none;
   }
 }
+/**/

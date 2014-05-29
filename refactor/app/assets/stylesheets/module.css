@@ -1,0 +1,96 @@
+.filter {
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: right;
+    background: url("images/dropdown_arrow.png") no-repeat #fff 319px 2px;
+    /* dropdown_arrow.png is a 31x28 image */
+}
+
+.flex-filter h4 {
+  vertical-align: bottom;
+  margin: 0;
+  color: #14bbb1;
+}
+
+select {
+    border:0;
+    background:transparent;
+    height:26px;
+    border:2px solid #14bbb1;
+    float: right;
+    width:150px;
+    -webkit-appearance: none;
+    padding-left: 1em ;
+    font-family: Questrial;
+}
+
+/*flex for individual post <section>'s*/
+
+.refactorpost {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-first;
+  background-color: #3c4a5b;
+  margin: .25em 0;
+
+}
+
+.flex-posttitle {
+  color: #14bbb1;
+  padding: 1em;
+}
+
+.flex-posttitle a {
+  color: #93d041;
+}
+
+.language-tag {
+  background-color: #93d041;
+  border-radius: .1em;
+}
+
+.flex-posttitle .language-tag {
+  color: white;
+  font-size: 10pt;
+  text-decoration: none;
+  padding: .2em;
+}
+
+/*This is the voting module--------------*/
+
+.flex-vote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 6em;
+  background-color: #f9f9f9;
+  min-width: 4em;
+}
+
+.voteup {
+  width: 2em;
+  height: 1em;
+  margin: .1em 0;
+  fill: #14bbb1;
+}
+
+.voteup:hover {
+  fill: #da6869;
+}
+
+.votedown {
+  background: url("../Assets/svg/down_vote.svg") no-repeat;
+  width: 2em;
+  height: 1em;
+  margin: .1em 0;
+  fill: #14bbb1;
+}
+
+.votedown:hover {
+  fill: #da6869;
+}
+
+.votecounter {
+  text-align: center;
+}
