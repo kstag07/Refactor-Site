@@ -1,3 +1,70 @@
+/*Hero text animation*/
+
+#herotext {
+  color:#fff;
+  width:0em;
+  height:1.25em;
+  border-right: .125em solid #39F;
+  display:block;
+  overflow:hidden;
+  -webkit-animation-name: blink-start, typing, blink-end;
+  -webkit-animation-duration: 3s, 1s, 1s;
+  -webkit-animation-timing-function: linear, steps(20, end), linear;
+  -webkit-animation-delay: 0s, 2s, 2s;
+  -webkit-animation-iteration-count: 1, 1, infinite;
+  -webkit-animation-direction: normal;
+  -webkit-animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  animation-name: blink-start, typing, blink-end;
+  animation-duration: 1s, 1s, 1s;
+  animation-timing-function: linear, steps(10, end), linear;
+  animation-delay: 0s, 1s, 2s;
+  animation-iteration-count: 1, 1, infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes typing {
+  from { width: 0em; }
+  to   { width: 31.2em; }
+}
+
+@-webkit-keyframes blink-start {
+  from, to { border-color: #333; }
+  50% { border-color: transparent; }
+}
+
+@-webkit-keyframes blink-end {
+  from, to { border-color: #333; }
+  50% { border-color: transparent; }
+}
+
+/*Hero section*/
+
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: #14bbb1;
+  text-align: center;
+  height: 23em;
+}
+
+.hero h1 {
+  font-size: 5em;
+  line-height: .5em;
+  margin-top: .3em;
+}
+
+.hero h4 {
+  margin: 0 0 1em 0;
+  margin-top: 1.6em;
+}
+
+/*language drop down list*/
+
 .filter {
     overflow: hidden;
     vertical-align: middle;
@@ -15,13 +82,15 @@
 select {
     border:0;
     background:transparent;
-    height:26px;
-    border:2px solid #14bbb1;
+    height: 2em;
+    border: .2em solid #14bbb1;
     float: right;
     width:150px;
     -webkit-appearance: none;
-    padding-left: 1em ;
-    font-family: Questrial;
+    padding-left: .5em ;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .7em;
+    color: #3c4a5b;
 }
 
 /*flex for individual post <section>'s*/
@@ -46,14 +115,25 @@ select {
 
 .language-tag {
   background-color: #93d041;
-  border-radius: .1em;
+  border-radius: .3em;
 }
 
 .flex-posttitle .language-tag {
   color: white;
-  font-size: 10pt;
+  font-size: .6em;
   text-decoration: none;
-  padding: .2em;
+  padding: .15em .8em;
+}
+
+.flex-posttitle h3 {
+  line-height: .2em;
+  margin-top: .5em;
+}
+
+.flex-posttitle h4 {
+  line-height: .2em;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-bottom: .4em;
 }
 
 /*This is the voting module--------------*/
@@ -80,7 +160,6 @@ select {
 }
 
 .votedown {
-  background: url("../Assets/svg/down_vote.svg") no-repeat;
   width: 2em;
   height: 1em;
   margin: .1em 0;
@@ -161,5 +240,124 @@ border: 1px solid rgba(81, 203, 238, 1);
 }
 
 .new-form a {
+  text-align: right;
+}
+
+/*modal*/
+
+.btn:hover {
+  background: #357ebd;
+}
+.btn.btn-big {
+  font-size: 18px;
+  padding: 15px 20px;
+  min-width: 100px;
+}
+.btn-close {
+  color: #aaaaaa;
+  font-size: 30px;
+  text-decoration: none;
+  position: absolute;
+  right: .5em;
+  top: 0;
+}
+.btn-close:hover {
+  color: #919191;
+}
+.modal:before {
+  content: "";
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.modal:target:before {
+  display: block;
+}
+.modal:target .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  top: 20%;
+}
+
+.modal-dialog {
+  background: #fefefe;
+  border: #333333 solid 1px;
+  border-radius: 5px;
+  margin-left: -200px;
+  position: fixed;
+  left: 40%;
+  top: -100%;
+  z-index: 11;
+  width: 35em;
+  height: 8em;
+  -webkit-transform: translate(0, -500%);
+  -ms-transform: translate(0, -500%);
+  transform: translate(0, -500%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+
+
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.modal-login {
+  display: flex;
+  flex: 1;
+  flex-flow: column nowrap;
+  text-align: center;
+}
+
+.modal-register {
+  display: flex;
+  flex: 1;
+  border-left: .1em solid gray;
+}
+
+.modal-registerbody {
+  margin: auto;
+}
+
+.modal-registerbody a {
+  text-decoration: none;
+}
+
+.gitreg_button {
+  height: auto;
+  width: 12em;
+}
+
+.modal-loginbody form {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 10em;
+  margin: 1em auto;
+}
+
+.modal-loginbody form input {
+  font-size: 1em;
+}
+
+
+.modal-header,
+.modal-footer {
+  padding: 10px 20px;
+}
+.modal-header {
+  border-bottom: #eeeeee solid 1px;
+}
+.modal-header h2 {
+  font-size: 20px;
+}
+.modal-footer {
+  border-top: #eeeeee solid 1px;
   text-align: right;
 }
