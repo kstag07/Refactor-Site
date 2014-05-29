@@ -94,3 +94,72 @@ select {
 .votecounter {
   text-align: center;
 }
+
+
+/*This is the code input section--------------*/
+
+.flex-formcontainer {
+  margin: 5em 0;
+}
+
+.user-posttitle {
+  font-size: 2em;
+  padding: .5em;
+  margin: auto;
+}
+.user-posttitleinput {
+  width: 100%;
+  font-size: 2em;
+  padding: 0 .2em;
+}
+
+.post-filter {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1em 0;
+}
+
+.post-filter select {
+  background-color: white;
+}
+
+.new-form {
+  padding: 3em;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #f9f9f9;
+
+}
+
+.title-field {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.new-post input[type=text], textarea {
+-webkit-transition: all 0.30s ease-in-out;
+-moz-transition: all 0.30s ease-in-out;
+-ms-transition: all 0.30s ease-in-out;
+-o-transition: all 0.30s ease-in-out;
+outline: none;
+padding: 3px 0px 3px 3px;
+margin: 5px 1px 3px 0px;
+border: 1px solid #DDDDDD;
+}
+
+.new-post input[type=text]:focus, textarea:focus {
+box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+padding: 3px 0px 3px 3px;
+margin: 5px 1px 3px 0px;
+border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.user-postcode {
+  height: 15em;
+  width: 100%;
+  font-size: 2em;
+}
+
+.new-form a {
+  text-align: right;
+}

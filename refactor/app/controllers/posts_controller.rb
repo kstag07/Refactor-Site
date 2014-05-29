@@ -6,9 +6,9 @@ class PostsController < ApplicationController
   def index
     @posts = policy_scope(Post)
     if params[:filter]
-      @posts = Post.filter(params[:filter])
+      @posts = Post.filter(params[:filter]).includes(:comments).order("comments.created_at desc").order("posts.created_at desc")
     else
-      @posts = Post.search(params[:search])
+      @posts = Post.search(params[:search]).order("posts.created_at desc")
     end
   end
 
