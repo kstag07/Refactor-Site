@@ -57,7 +57,6 @@
             <div class="flex-posttitle">
               <h3><%= link_to post.title, post %></h3>
               <h4>By: <%= link_to post.author.name, user_path(id: post.author) %></h4>
-              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
               <a class="language-tag"><%= Post::LANGUAGE_OPTIONS[post.language] %></a>
             </div>
           </section>
