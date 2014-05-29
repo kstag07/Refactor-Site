@@ -6,12 +6,19 @@ module ApplicationHelper
     include Rouge::Plugins::Redcarpet
   end
 
+  class CodeRayify < Redcarpet::Render::HTML
+    def block_code(code, language)
+      CodeRay.scan(code, language || 'text', 'html').div(:line_numbers => :inline)
+    end
+  end
+
   def markdown(text)
     render_options = {
       filter_html: true,
       hard_wrap: true,
     }
-    renderer = HTMLwithRouge.new(render_options)
+    # renderer = HTMLwithRouge.new(render_options)
+    renderer = CodeRayify.new(render_options)
 
     extensions = {
       fenced_code_blocks: true,

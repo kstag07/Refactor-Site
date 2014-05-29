@@ -19,6 +19,26 @@ footer {
   background-color: #3c4a5b;
 }
 
+.button1 {
+  width: auto;
+  height: 1.7em;
+  padding: 0 1em;
+  font-size: 2em;
+  background-color: #14bbb1;
+  color: white;
+  font-family: 'Questrial', serif;
+  border: .1em solid #14bbb1;
+  border-radius: .2em;
+  margin: 1em 0;
+}
+
+.flex-button{
+  display: flex;
+  justify-content: center;
+}
+
+
+
 .minheight {
  min-height: 30%;
 }
@@ -49,9 +69,15 @@ footer {
   display: flex;
   justify-content: center;
   flex-flow: column wrap;
-  align-content: center;
-  text-align: center;
+  align-items: center;
+  /*text-align: center;*/
   background-color: #14bbb1;
+}
+
+.hero a {
+  width: 10em;
+  text-align: center;
+  text-decoration: none;
 }
 
 .flex-header {

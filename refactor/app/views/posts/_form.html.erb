@@ -1,3 +1,7 @@
+<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+<%= stylesheet_link_tag 'reset.css', 'module.css', 'base.css', 'layout.css', 'typography.css', 
+media: "all", "data-turbolinks-track" => true %>
+
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -11,19 +15,35 @@
     </div>
   <% end %>
 
-  <div class="fieldd">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :language %><br>
-    <%= f.collection_select(:language, Post::LANGUAGE_OPTIONS, :first, :last) %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <main class="flex-main">
+    <article class="flex-formcontainer">
+      <h2>Post a Refactor</h2>
+      <section class="new-form">
+        <form class="new-post">
+          <div class="title-field">
+            <!-- <label class="user-posttitle">Title:</label>
+            <input type="text" class="user-posttitleinput" placeholder="Name your Refactor"> -->
+            <%= f.label "Title:", class: "user-posttitle" %><br>
+            <%= f.text_field :title, class: "user-posttitleinput", placeholder: "Name your Refactor" %>
+          </div>
+          <div class="post-filter">
+            <!-- <select name="State" id="input7"> -->
+              <%= f.select :language, options_from_collection_for_select(Post::LANGUAGE_OPTIONS, :first, :last, class: "post-filter") %>
+            <!-- </select> -->
+          </div>
+          <div class="code-field">
+            <!-- <label class="user-posttitle">Code:</label>
+            <textarea class="user-postcode"></textarea> -->
+            <%= f.label "Code:", class: "user-posttitle" %></a><br>
+            <%= f.text_area :body, class: "user-postcode" %></a>
+          </div>
+        </form>
+        <a href="#">Down with markdown / Need help formatting?</a>
+      </section>
+      <div class="flex-button">
+        <!-- <button type="submit" value="submit" class="button">Submit</button> -->
+        <%= f.submit "Submit", class: "button1" %>
+      </div>
+    </article>
+  </main>
 <% end %>

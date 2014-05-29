@@ -1,3 +1,4 @@
-.button {
-
+.button:hover {
+  color: #14bbb1;
+  background-color: white;
 }
