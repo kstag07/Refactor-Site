@@ -1,9 +1,5 @@
 class AddDefaultToUsersRole < ActiveRecord::Migration
-  def up
-    change_column :users, :role, :string, :default => 'author'
-  end
-
-  def down
-    change_column :users, :role, :string, :default => nil
+  def change
+    add_column :users, :role, :string, :default => 'author'
   end
 end
