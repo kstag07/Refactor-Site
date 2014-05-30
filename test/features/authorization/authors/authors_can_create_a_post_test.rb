@@ -7,9 +7,10 @@ feature "As a user, I want to be able to contribute by making posts" do
     new_post_body = "body of new post"
 
     visit new_post_path
-    fill_in 'Title', with: new_post_title
-    fill_in 'Body', with: new_post_body
-    click_on 'Create Post'
+
+    fill_in 'post_title', with: new_post_title
+    fill_in 'post_body', with: new_post_body
+    click_on 'Submit'
 
     page.text.must_include new_post_title
     page.text.must_include new_post_body

@@ -169,7 +169,7 @@ vertical-align: bottom;
   color: #da6869;
 }
 
-@media all and (max-width: 60em) {
+@media all and (max-width: 54em) {
   .nav {
     display: none;
   }
