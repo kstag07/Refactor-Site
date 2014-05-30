@@ -7,7 +7,7 @@
     <a class="language-tag">
       <%= Post::LANGUAGE_OPTIONS[@post.language] %>
     </a>
-    <pre class="originalpost-code">
+    <pre>
       <%= markdown @post.body %>
     </pre>
     <a href="#postrefactor" class="button">Refactor This</a>
