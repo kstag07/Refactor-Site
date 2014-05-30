@@ -1,7 +1,3 @@
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,800,400' rel='stylesheet' type='text/css'>
-<%= stylesheet_link_tag 'reset.css', 'module.css', 'base.css', 'layout.css', 'typography.css', media: "all", "data-turbolinks-track" => true %>
-
 <main class="flex-main">
     <article>
       <section class="flex-filter">
@@ -33,7 +29,7 @@
             </div>
             <div class="flex-posttitle">
               <h3><%= link_to post.title, post %></h3>
-              <h4>Description pulled from user comment</h4>
+              <h4 class="username">Description pulled from user comment</h4>
               <a class="language-tag"><%= Post::LANGUAGE_OPTIONS[post.language] %></a>
             </div>
           </section>
