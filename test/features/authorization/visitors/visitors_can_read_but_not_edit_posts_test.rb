@@ -16,11 +16,9 @@ feature "Vistor has certain capabilities" do
     #Given that I am not signed in,
 
     #When I visit the posts page,
-    visit root_path
-    click_on "New Post!"   # New Post! link is in the header now.
+    visit posts_path
 
     #Then I will be redirected to the User Sign-in page.
-    #assert_redirected_to user_session_path
     page.text.must_include("Sign in")
   end
 
@@ -33,7 +31,6 @@ feature "Vistor has certain capabilities" do
     click_on "Post a refactor"
 
     #Then I will be redirected to the User Sign-in page.
-    #assert_redirected_to user_session_path
     page.text.must_include("Sign in")
   end
 

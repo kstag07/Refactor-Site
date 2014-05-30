@@ -20,7 +20,7 @@ feature 'As an author I want to be able to delete my own post' do
     visit root_path
     page.wont_have_content "Destroy"
     page.wont_have_content "Edit"
-    click_on "New Post"
-    page.text.must_include "You need to sign in or sign up before continuing."
+    click_on "Post a refactor"
+    page.text.must_include "SIGN IN WITH GITHUB"
   end
 end

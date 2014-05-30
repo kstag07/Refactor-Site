@@ -9,7 +9,7 @@ feature "Vistor has certain capabilities" do
     visit posts_path
     page.must_have_content posts(:ruby_post).title
     page.must_have_content posts(:js_post).title
-    # save_and_open_page
+
     # and select a language from the pull-down,
     select('Ruby', :from => 'filter')
     # find('#filter').find(:xpath, 'option[6]').select_option

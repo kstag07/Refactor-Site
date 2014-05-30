@@ -6,13 +6,11 @@ feature "As a user, I want to sign into my account to access my settings and pos
     fill_in "Email", with: users(:author_user).email
     fill_in "Password", with: 'password'
     click_on "Sign in"
-    sign_in(:author_user)
     page.must_have_content "Signed in successfully"
   end
 
   scenario "sign in with twitter works" do
-    visit root_path
-    click_on "Sign in"
+    visit new_user_session_path
     OmniAuth.config.test_mode = true
     Capybara.current_session.driver.request.env['devise.mapping'] = Devise.mappings[:user]
     Capybara.current_session.driver.request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter]
@@ -28,8 +26,7 @@ feature "As a user, I want to sign into my account to access my settings and pos
   end
 
   scenario "sign in with github works" do
-    visit root_path
-    click_on "Sign in"
+    visit new_user_session_path
     OmniAuth.config.test_mode = true
     Capybara.current_session.driver.request.env['devise.mapping'] = Devise.mappings[:user]
     Capybara.current_session.driver.request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter]
