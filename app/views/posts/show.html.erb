@@ -70,7 +70,6 @@
 </main>
 
 <p>
-  <%= link_to 'Destroy Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to destroy this post?' } %> |
   <% if current_user.present? && (current_user.mod? || (current_user.author? &&  @post.author == current_user)) %>
     <%= link_to 'Edit', edit_post_path(@post) %> |
     <%= link_to 'Destroy Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to destroy this post?' } %> |
