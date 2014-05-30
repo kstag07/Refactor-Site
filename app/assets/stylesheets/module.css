@@ -135,7 +135,7 @@ select {
   margin-top: .5em;
 }
 
-.flex-posttitle h4, .flex-refactorpost h4 {
+.username {
   line-height: .2em;
   font-family: 'Source Sans Pro', sans-serif;
   padding-bottom: .4em;
@@ -379,7 +379,7 @@ border: 1px solid rgba(81, 203, 238, 1);
 /*Post View*/
 
 .postview {
-  margin-bottom: 3em;
+  margin-bottom: 0em;
 }
 
 .postview .language-tag {

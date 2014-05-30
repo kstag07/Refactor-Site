@@ -6,7 +6,7 @@ feature "As an author I want to add comments to a post so I can improve other's 
     visit root_path
 
     click_on 'Test title by moderator'
-    fill_in "Content", with: "This is a comment"
+    fill_in "Content", with: "This is a dsfdsfsdf"
     click_button "Add Refactor"
     # page.text.must_include "Refactor was successfully submitted"
     page.text.must_include " This is a comment"
