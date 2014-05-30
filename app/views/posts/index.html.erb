@@ -4,13 +4,13 @@
 <head>
   <title></title>
   <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag 'reset.css', 'module.css', 'base.css', 'layout.css', 'typography.css', media: "all", "data-turbolinks-track" => true %>
+  
 </head>
 
 <body>
   <% unless current_user.present? %>
     <section class="hero">
-      <h1>Refactors</h1>
+      <h1>Refactors</h1>  
       <h4 id="herotext">Because every line of code is an opportunity for optimization.</h4>
       <p>Refactors is a community of like-minded coders seeking to improve their code together.</br>
       <p>Post code to be refactored or browse code to refactor and help each other.</p>
@@ -33,12 +33,6 @@
           <% end %>
         </div>
       </section>
-
-      <% if current_user.present? %>
-      <div>
-        <%= link_to 'Create New Post', new_post_path %>
-      </div>
-      <% end %>
 
       <div class="flex-postcontainer">
         <% @posts.each do |post| %>

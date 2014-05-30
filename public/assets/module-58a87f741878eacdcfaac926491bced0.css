@@ -42,21 +42,14 @@
 
 /*Hero section*/
 
-.hero, .help-hero {
+.hero {
   display: flex;
   justify-content: center;
   flex-flow: column nowrap;
   align-items: center;
-  text-align: center;
-}
-
-.hero {
   background-color: #14bbb1;
+  text-align: center;
   height: 23em;
-}
-
-.help-hero h1 {
-  padding-top: 3em;
 }
 
 .hero h1 {
@@ -195,9 +188,11 @@ label h3 {
 
 .user-posttitle {
   padding: .5em;
+  margin: auto;
 }
 .user-posttitleinput {
   width: 100%;
+  font-size: 2em;
   padding: 0 .2em;
 }
 
@@ -225,7 +220,7 @@ label h3 {
 
 .title-field {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row nowrap;
 }
 
 .new-post input[type=text], textarea {
@@ -246,13 +241,10 @@ margin: 5px 1px 3px 0px;
 border: 1px solid rgba(81, 203, 238, 1);
 }
 
-.user-posttitleinput, .user-postcode {
-  font-size: .889em;
-}
-
 .user-postcode {
   height: 10.5em;
   width: 100%;
+  font-size: .889em;
 }
 
 
@@ -308,7 +300,7 @@ border: 1px solid rgba(81, 203, 238, 1);
   top: -100%;
   z-index: 11;
   width: 35em;
-  height: 9.5em;
+  height: 8em;
   -webkit-transform: translate(0, -500%);
   -ms-transform: translate(0, -500%);
   transform: translate(0, -500%);

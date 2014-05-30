@@ -31,9 +31,8 @@ footer p {
 
 .help {
   background: url("../Assets/svg/help_icon.svg") no-repeat;
-  width: 1.7em;
-  height: 1.7em;
-  margin: 0 1em;
+  width: 1.5em;
+  height: 1.5em;
 }
 
 button, .button {
@@ -50,27 +49,6 @@ button, .button {
   text-decoration: none;
   text-align: center;
 }
-
-a.new-post-button  {
-  font-family: 'Open Sans', sans-serif;
-  font-size: .8em;
-  text-decoration: none;
-  padding: 0 .5em;
-}
-
-.new-post-button {
-  height: 1.3em;
-  background-color: #14bbb1;
-  color: white;
-  text-transform: uppercase;
-  padding: 0 .1em;
-  margin: 0 .1em;
-  border: .125em solid #14bbb1;
-  border-radius: .3em;
-  text-align: center;
-}
-
-
 
 .flex-button{
   display: flex;
@@ -112,7 +90,7 @@ a.new-post-button  {
   height: 2.925em;
 }
 
-.refactors_logo {
+.logo {
   width: auto;
   height: 4.39em;
 }
@@ -121,11 +99,15 @@ a.new-post-button  {
   display: flex;
   align-content: center;
   flex-flow: row wrap;
-  align-items: center;
+  flex-align: center;
   justify-content: space-between;
   padding-right: .5em;
 }
 
+.nav a {
+  text-decoration: none;
+  font-size: 1em;
+}
 
 .search {
   color: white;
@@ -148,13 +130,13 @@ a.new-post-button  {
 .submit {
 width: 1.1em;
 height: 1.1em;
-margin-bottom: .3em;
+margin: 0 2em .3em 0;
 vertical-align: bottom;
 }
 
 .account {
-  padding: 0 1em;
-  font-family: 'Source Sans Pro', sans-serif;
+  padding: 0 2em;
+  font-family:
 }
 
 .login {
@@ -165,41 +147,10 @@ vertical-align: bottom;
   color: #da6869;
 }
 
-.signout {
-  color: #da6869;
-}
-
-<<<<<<< HEAD
 @media all and (max-width: 54em) {
-=======
-@media all and (max-width: 60em) {
->>>>>>> 2f78352819c668fd60d79aa89c132d86b284dc4a
   .nav {
     display: none;
   }
 }
 
 /**/
-
-ul {
-  list-style-type: circle;
-  margin: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-ul li {
-  text-align: left;
-  font-size: .889em;
-}
-
-.help-hero article {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-}
-
-.help-hero div {
-  width: 36%;
-}

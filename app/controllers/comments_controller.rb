@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
   #before_action :authenticate_user!, except: [:show ]
 
   def index
-  @comments = Comment.all
-end
+    @comments = Comment.all
+  end
 
   def show
   end
@@ -63,9 +63,9 @@ private
 
   def set_comment
     @comment = Comment.find(params[:id])
-   end
+  end
 
-   def comment_params
-      params.require(:comment).permit(:author, :author_url, :author_email, :user_ip, :user_agent, :referrer, :content, :post_id, :created_at, :updated_at)
-    end
+  def comment_params
+   params.require(:comment).permit(:author, :author_url, :author_email, :user_ip, :user_agent, :referrer, :content, :post_id, :created_at, :updated_at)
+  end
 end
