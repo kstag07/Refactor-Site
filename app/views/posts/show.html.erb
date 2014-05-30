@@ -1,15 +1,9 @@
-<head>
-  <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag 'reset.css', 'module.css', 'base.css', 'layout.css', 'typography.css', media: "all", "data-turbolinks-track" => true %>
-</head>
-
 <main class="flex-main">
 <!-- This is where the original post will show when the refactor link is accessed from the main index view -->
 <article class="postview">
   <section>
-    <h3 class="postview">
-      <%= @post.title %>
-    </h3>
+    <h3 class="postview"><%= @post.title %></h3>
+    <h3 class="username"><%= @post.author.name %></h3>
     <a class="language-tag">
       <%= Post::LANGUAGE_OPTIONS[@post.language] %>
     </a>
@@ -74,7 +68,7 @@
     <%= link_to 'Edit', edit_post_path(@post) %> |
     <%= link_to 'Destroy Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to destroy this post?' } %> |
   <% end %>
-  <%= link_to 'Back', posts_path %>
+  <%= link_to 'Home', posts_path %>
 </p>
 
 <p>
