@@ -1,40 +1,43 @@
-<h2> Post History for: <%= current_user.name %> </h2>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,800,400' rel='stylesheet' type='text/css'>
+<%= stylesheet_link_tag 'reset.css', 'module.css', 'base.css', 'layout.css', 'typography.css', media: "all", "data-turbolinks-track" => true %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Posts</th>
-    </tr>
-  </thead>
+<main class="flex-main">
+    <article>
+      <section class="flex-filter">
+        <h4><%= current_user.name %></h4>
+        <!-- This form will filter posts by language -->
+        <div class="filter">
+          <select name="State" id="input7">
+            <option value="Choice" class="choice">Filter Posts By:</option>
+            <option value="post">Your Posts</option>
+            <option value="comment">Your Refactors</option>
+          </select>
+        </div>
+      </section>
 
-  <tbody>
-    <% @user.posts.each do |post| %>
-      <tr>
-        <td><%= link_to post.title, post %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="flex-postcontainer">
+        <% @user.posts.each do |post| %>
+          <section class="refactorpost">
+            <div class="flex-vote">
+              <a href="#">
+                <svg class="voteup" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 26.279 13.502" enable-background="new 0 0 26.279 13.502" xml:space="preserve">
+                <polygon points="0,13.5 13.1,0 26.3,13.5"/>
+                </svg>
+              </a>
+              <span class="votecounter">vote count</span>
+              <a href="#" class="votedown"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 26.279 13.502" enable-background="new 0 0 26.279 13.502" xml:space="preserve">
+              <polygon points="26.3,0 13.1,13.5 0,0"/>
+              </svg>
+              </a>
+            </div>
+            <div class="flex-posttitle">
+              <h3><%= link_to post.title, post %></h3>
+              <h4>Description pulled from user comment</h4>
+              <a class="language-tag"><%= Post::LANGUAGE_OPTIONS[post.language] %></a>
+            </div>
+          </section>
 
-<h2> Comment History for: <%= current_user.name %> </h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Comments</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user.comments.each do |comment| %>
-      <tr>
-        <td><%= comment.content %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+        <% end %>
 <%= link_to 'Back', root_path %>
 

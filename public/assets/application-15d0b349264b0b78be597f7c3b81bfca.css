@@ -1,0 +1,1035 @@
+html, body {
+  height: 100%;
+}
+
+article {
+  width: 75%;
+}
+
+a {
+  text-decoration: none;
+  font-size: 0.889em;
+  color: #da6869;
+}
+
+header {
+  background-color: #3c4a5b;
+  height: 3.72em;
+  border-bottom: .2em solid #51b5af;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  color: white;
+  background-color: #3c4a5b;
+}
+
+footer p {
+  margin: 0;
+}
+
+.help {
+  background: url("../Assets/svg/help_icon.svg") no-repeat;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+button, .button {
+  height: 1.7em;
+  padding: .15em 1em;
+  background-color: #14bbb1;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-size: .889em;
+  border: .125em solid #fff;
+  border-radius: .3em;
+  margin: 1em 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.flex-button{
+  display: flex;
+  justify-content: center;
+}
+
+.minheight {
+ min-height: 5%;
+}
+
+.minheight:after {
+  content: "";
+  display: block;
+}
+
+.flex-main {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.flex-filter {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 3em 0 1em 0;
+  justify-content: space-between;
+  border-bottom: 1px solid #b8babc;
+  width: 100%;
+}
+
+.flex-header {
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 2.925em;
+}
+
+.logo {
+  width: auto;
+  height: 4.39em;
+}
+
+.nav{
+  display: flex;
+  align-content: center;
+  flex-flow: row wrap;
+  flex-align: center;
+  justify-content: space-between;
+  padding-right: .5em;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.search {
+  color: white;
+  width: 13em;
+  text-decoration: none;
+  background: none;
+  border-radius: 0;
+  border: transparent;
+  border-bottom: 2px solid white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: .8em;
+}
+.search:focus {
+  border-bottom: 2px solid #acd34c;
+  outline: none;
+}
+
+.submit {
+width: 1.1em;
+height: 1.1em;
+margin: 0 2em .3em 0;
+vertical-align: bottom;
+}
+
+.account {
+  padding: 0 2em;
+  font-family:
+}
+
+.login {
+  color: #51b5af;
+}
+
+.signup {
+  color: #da6869;
+}
+
+@media all and (max-width: 54em) {
+  .nav {
+    display: none;
+  }
+}
+
+/**/
+/*Hero text animation*/
+
+#herotext {
+  color:#fff;
+  width:0em;
+  height:1.25em;
+  border-right: .125em solid #39F;
+  display:block;
+  overflow:hidden;
+  -webkit-animation-name: blink-start, typing, blink-end;
+  -webkit-animation-duration: 3s, 1s, 1s;
+  -webkit-animation-timing-function: linear, steps(20, end), linear;
+  -webkit-animation-delay: 0s, 2s, 2s;
+  -webkit-animation-iteration-count: 1, 1, infinite;
+  -webkit-animation-direction: normal;
+  -webkit-animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  animation-name: blink-start, typing, blink-end;
+  animation-duration: 1s, 1s, 1s;
+  animation-timing-function: linear, steps(10, end), linear;
+  animation-delay: 0s, 1s, 2s;
+  animation-iteration-count: 1, 1, infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes typing {
+  from { width: 0em; }
+  to   { width: 31.2em; }
+}
+
+@-webkit-keyframes blink-start {
+  from, to { border-color: #333; }
+  50% { border-color: transparent; }
+}
+
+@-webkit-keyframes blink-end {
+  from, to { border-color: #333; }
+  50% { border-color: transparent; }
+}
+
+/*Hero section*/
+
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: #14bbb1;
+  text-align: center;
+  height: 23em;
+}
+
+.hero h1 {
+  font-size: 5em;
+  line-height: .5em;
+  margin-top: .3em;
+}
+
+.hero h4 {
+  margin: 0 0 1em 0;
+  margin-top: 1.6em;
+}
+
+/*language drop down list*/
+
+.filter {
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: right;
+    background: url("images/dropdown_arrow.png") no-repeat #fff 319px 2px;
+    /* dropdown_arrow.png is a 31x28 image */
+}
+
+.flex-filter h4 {
+  vertical-align: bottom;
+  margin: 0;
+  color: #14bbb1;
+}
+
+select {
+    border:0;
+    background:transparent;
+    height: 2em;
+    border: .2em solid #14bbb1;
+    float: right;
+    width:150px;
+    -webkit-appearance: none;
+    padding-left: .5em ;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .7em;
+    color: #3c4a5b;
+}
+
+/*flex for individual post <section>'s*/
+
+.refactorpost {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-first;
+  background-color: #3c4a5b;
+  margin: .25em 0;
+}
+
+.flex-posttitle {
+  padding: 1em;
+}
+
+.flex-posttitle a {
+  color: #93d041;
+}
+
+.language-tag {
+  background-color: #93d041;
+  border-radius: .3em;
+}
+
+.flex-posttitle .language-tag {
+  color: white;
+  font-size: .6em;
+  text-decoration: none;
+  padding: .15em .8em;
+}
+
+.flex-posttitle h3 {
+  line-height: .2em;
+  margin-top: .5em;
+}
+
+.flex-posttitle h4, .flex-refactorpost h4 {
+  line-height: .2em;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-bottom: .4em;
+  color: #14bbb1;
+
+}
+
+/*This is the voting module--------------*/
+
+.flex-vote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 6em;
+  background-color: #f9f9f9;
+  min-width: 4em;
+}
+
+.voteup {
+  width: 2em;
+  height: 1em;
+  margin: .1em 0;
+  fill: #14bbb1;
+}
+
+.voteup:hover {
+  fill: #da6869;
+}
+
+.votedown {
+  width: 2em;
+  height: 1em;
+  margin: .1em 0;
+  fill: #14bbb1;
+}
+
+.votedown:hover {
+  fill: #da6869;
+}
+
+.votecounter {
+  text-align: center;
+}
+
+
+/*This is the code input section--------------*/
+
+label h3 {
+  margin: 0;
+  color: #14bbb1;
+}
+
+.flex-formcontainer {
+  margin: 1em 0;
+}
+
+.user-posttitle {
+  padding: .5em;
+  margin: auto;
+}
+.user-posttitleinput {
+  width: 100%;
+  font-size: 2em;
+  padding: 0 .2em;
+}
+
+.post-filter {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1em 0;
+}
+
+.post-filter select {
+  background-color: white;
+}
+
+.new-form {
+  padding: 1.5em;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #f9f9f9;
+}
+
+.new-form a {
+  text-align: right;
+}
+
+
+.title-field {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.new-post input[type=text], textarea {
+-webkit-transition: all 0.30s ease-in-out;
+-moz-transition: all 0.30s ease-in-out;
+-ms-transition: all 0.30s ease-in-out;
+-o-transition: all 0.30s ease-in-out;
+outline: none;
+padding: 3px 0px 3px 3px;
+margin: 5px 1px 3px 0px;
+border: 1px solid #DDDDDD;
+}
+
+.new-post input[type=text]:focus, textarea:focus {
+box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+padding: 3px 0px 3px 3px;
+margin: 5px 1px 3px 0px;
+border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.user-postcode {
+  height: 10.5em;
+  width: 100%;
+  font-size: .889em;
+}
+
+
+/*modal*/
+
+.btn:hover {
+  background: #357ebd;
+}
+.btn.btn-big {
+  font-size: 18px;
+  padding: 15px 20px;
+  min-width: 100px;
+}
+.btn-close {
+  color: #aaaaaa;
+  font-size: 30px;
+  text-decoration: none;
+  position: absolute;
+  right: .5em;
+  top: 0;
+}
+.btn-close:hover {
+  color: #919191;
+}
+.modal:before {
+  content: "";
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.modal:target:before {
+  display: block;
+}
+.modal:target .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  top: 20%;
+}
+
+.modal-dialog {
+  background: #fefefe;
+  border: #333333 solid 1px;
+  border-radius: 5px;
+  margin-left: -200px;
+  position: fixed;
+  left: 40%;
+  top: -100%;
+  z-index: 11;
+  width: 35em;
+  height: 8em;
+  -webkit-transform: translate(0, -500%);
+  -ms-transform: translate(0, -500%);
+  transform: translate(0, -500%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+
+
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.modal-login {
+  display: flex;
+  flex: 1;
+  flex-flow: column nowrap;
+  text-align: center;
+}
+
+.modal-register {
+  display: flex;
+  flex: 1;
+  border-left: .1em solid gray;
+}
+
+.modal-registerbody {
+  margin: auto;
+}
+
+.modal-registerbody a {
+  text-decoration: none;
+}
+
+.gitreg_button {
+  height: auto;
+  width: 12em;
+}
+
+.modal-loginbody form {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 10em;
+  margin: 1em auto;
+}
+
+.modal-loginbody form input {
+  font-size: 1em;
+}
+
+
+.modal-header,
+.modal-footer {
+  padding: 10px 20px;
+}
+.modal-header {
+  border-bottom: #eeeeee solid 1px;
+}
+.modal-header h2 {
+  font-size: 20px;
+}
+.modal-footer {
+  border-top: #eeeeee solid 1px;
+  text-align: right;
+}
+
+
+/*Post View*/
+
+.postview {
+  margin-bottom: 3em;
+}
+
+.postview .language-tag {
+  color: white;
+  font-size: .6em;
+  text-decoration: none;
+  padding: .15em .8em;
+}
+
+.originalpost-code {
+  height: 20em;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+/*Section below original post where user refactors/comments go*/
+
+.flex-postcontainer {
+  margin: 3em 0;
+}
+
+.post-refactors {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1em 0;
+  background-color: #e6e6e6;
+}
+
+.refactorpost-code {
+  height: 15em;
+  width: 100%;
+  background-color: #f9f9f9;
+  margin-bottom: 2em;
+}
+
+.flex-refactorpost {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  width: 80%;
+  margin: 0 auto;
+}
+header {
+  background-color: #3c4a5b;
+  height: 4.73em;
+  border-bottom: .2em solid #51b5af;
+}
+
+.flex-header {
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: none;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 15em;
+  padding: 1em 1em 0em 1em;
+}
+
+.nav{
+  display: flex;
+  align-content: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-right: .5em;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1.618em;
+}
+
+.search {
+  color: white;
+  width: 20em;
+  text-decoration: none;
+  background: none;
+  border-radius: 0;
+  border: transparent;
+  border-bottom: 3px solid white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: 1em;
+}
+.search:focus {
+  border-bottom: 3px solid #acd34c;
+  outline: none;
+}
+
+.submit {
+width: 1.1em;
+vertical-align: bottom;
+}
+
+.account {
+  padding: 0 2em;
+}
+
+.login {
+  color: #51b5af;
+}
+
+.signup {
+  color: #da6869;
+}
+
+@media all and (max-width: 54em) {
+  .nav {
+    display: none;
+  }
+}
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .c, .highlight .cd {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+.highlight .ge {
+  color: #000000;
+  font-style: italic;
+}
+.highlight .gr {
+  color: #aa0000;
+}
+.highlight .gh {
+  color: #999999;
+}
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .gt {
+  color: #aa0000;
+}
+.highlight .kc {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kv {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .mf {
+  color: #009999;
+}
+.highlight .mh {
+  color: #009999;
+}
+.highlight .il {
+  color: #009999;
+}
+.highlight .mi {
+  color: #009999;
+}
+.highlight .mo {
+  color: #009999;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #009999;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .bp {
+  color: #999999;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .o {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbbbbb;
+}
+.highlight {
+  background-color: #f8f8f8;
+}/* line 1, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+a {
+  color: #000;
+}
+/* line 23, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+a:visited {
+  color: #666;
+}
+
+/* line 33, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 38, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 42, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 48, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 55, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 65, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+.button:hover {
+  color: #14bbb1;
+  background-color: white;
+  border: .13em solid #14bbb1;
+}
+html {font-size: 1.25em;}
+
+body {
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.45;
+  color: #333;
+}
+
+p {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 1.3em;}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-family: open sans;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+  font-size: 1.602em;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.424em;}
+
+h3 {font-size: 1.266em;}
+
+h4 {font-size: 1.125em;}
+
+p, small, .font_small {font-size: 0.889em;}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

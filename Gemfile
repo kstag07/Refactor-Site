@@ -10,7 +10,6 @@ gem 'omniauth-github'
 gem 'figaro'
 gem 'coderay'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use SCSS for stylesheets

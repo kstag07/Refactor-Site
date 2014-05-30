@@ -1,0 +1,71 @@
+header {
+  background-color: #3c4a5b;
+  height: 4.73em;
+  border-bottom: .2em solid #51b5af;
+}
+
+.flex-header {
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: none;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 15em;
+  padding: 1em 1em 0em 1em;
+}
+
+.nav{
+  display: flex;
+  align-content: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-right: .5em;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1.618em;
+}
+
+.search {
+  color: white;
+  width: 20em;
+  text-decoration: none;
+  background: none;
+  border-radius: 0;
+  border: transparent;
+  border-bottom: 3px solid white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: 1em;
+}
+.search:focus {
+  border-bottom: 3px solid #acd34c;
+  outline: none;
+}
+
+.submit {
+width: 1.1em;
+vertical-align: bottom;
+}
+
+.account {
+  padding: 0 2em;
+}
+
+.login {
+  color: #51b5af;
+}
+
+.signup {
+  color: #da6869;
+}
+
+@media all and (max-width: 54em) {
+  .nav {
+    display: none;
+  }
+}
