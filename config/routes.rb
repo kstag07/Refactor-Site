@@ -10,6 +10,7 @@ devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   # You can have the root of your site routed with "root"
    root 'posts#index'
+   get '/markdownhelp' => 'posts#help'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -16,7 +16,5 @@ end
 
 def sign_in(role = :mod)
   visit new_user_session_path
-  fill_in "Email", with: users(role).email
-  fill_in "Password", with: 'password'
-  click_button "Sign in"
+  click_on "Sign in with Github"
 end

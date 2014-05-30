@@ -19,16 +19,17 @@ media: "all", "data-turbolinks-track" => true %>
     <article class="flex-formcontainer">
       <section class="new-form">
         <form class="new-post">
-          <div class="code-field">
+          <div class="field">
             <%= f.text_area :content, class: "user-postcode" %></a>
+            <%= f.hidden_field :post_id %>
           </div>
-            <% f.hidden_field :post_id %>
         </form>
         <a href="#">Down with markdown / Need help formatting?</a>
       </section>
-      <div class="action flex-button">
+      <div class="action field flex-button">
         <%= f.submit "Add Refactor", class: "button" %>
       </div>
     </article>
   </main>
+  
 <% end %>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,800,400' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'reset.css', 'module.css', 'base.css', 'layout.css', 'typography.css', media: "all", "data-turbolinks-track" => true %>
+</head>
+<body>
+  <header class="flex-header">
+      <a href="#"><img class="refactors_logo" src="../Refactor-Style/Assets/svg/REFACTORS_LOGO.svg"></a>
+      <nav class="nav">
+        <form class="searchbox" action="">
+          <input class="search" type="text" placeholder="Search">
+          <svg  class="submit" type="submit" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"  enable-background="new 0 0 19.28 19.28" xml:space="preserve">
+          <g>
+            <circle opacity="0.75" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-miterlimit="10" cx="7" cy="7" r="6.3"/>
+
+              <line opacity="0.75" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-miterlimit="10" x1="13.3" y1="13.3" x2="18.8" y2="18.8"/>
+          </g>
+          </svg>
+        </form>
+        <a href="#" class="help"></a>
+        <div class="account">
+          <a class="login" href="#modal-one">Login |</a>
+          <a class="signup" href="#modal-one">| Sign Up</a>
+        </div>
+      </nav>
+  </header>
+  <section class="help-hero">
+    <h1>What Is Markdown?</h1>
+    <p>Markdown is a plain text formatting syntax designed so that it can optionally be converted to HTML using a tool by the same name.</br> Markdown is popularly used as format for readme files, or for writing messages in online discussion forums,</br>or in text editors for the quick creation of rich text documents.</p>
+    <article>
+      <div>
+        <ul>
+          <li>Indent your code to display a code block</li>
+          <li>Have extra return spaces between paragraphs</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Use # for h1, ## for h2 and ### for h3, etc.</li>
+          <li>Inline code are surround by `backtick` key.</li>
+        </ul>
+      </div>
+    </article>
+    <a href="http://markdowntutorial.com/" class="button">Markdown Tutorial</a>
+  </section>
+  <div class="minheight"></div>
+  <footer>
+    <p> Copyright Refactors 2014</p>
+  </footer>
+</body>
+</html>
