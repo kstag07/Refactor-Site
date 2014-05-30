@@ -101,11 +101,9 @@ select {
   justify-content: flex-first;
   background-color: #3c4a5b;
   margin: .25em 0;
-
 }
 
 .flex-posttitle {
-  color: #14bbb1;
   padding: 1em;
 }
 
@@ -130,10 +128,12 @@ select {
   margin-top: .5em;
 }
 
-.flex-posttitle h4 {
+.flex-posttitle h4, .flex-refactorpost h4 {
   line-height: .2em;
   font-family: 'Source Sans Pro', sans-serif;
   padding-bottom: .4em;
+  color: #14bbb1;
+
 }
 
 /*This is the voting module--------------*/
@@ -177,18 +177,20 @@ select {
 
 /*This is the code input section--------------*/
 
+label h3 {
+  margin: 0;
+  color: #14bbb1;
+}
+
 .flex-formcontainer {
-  margin: 5em 0;
+  margin: 1em 0;
 }
 
 .user-posttitle {
-  font-size: 2em;
   padding: .5em;
-  margin: auto;
 }
 .user-posttitleinput {
   width: 100%;
-  font-size: 2em;
   padding: 0 .2em;
 }
 
@@ -203,16 +205,20 @@ select {
 }
 
 .new-form {
-  padding: 3em;
+  padding: 1.5em;
   display: flex;
   flex-flow: column nowrap;
   background-color: #f9f9f9;
-
 }
+
+.new-form a {
+  text-align: right;
+}
+
 
 .title-field {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column wrap;
 }
 
 .new-post input[type=text], textarea {
@@ -233,15 +239,15 @@ margin: 5px 1px 3px 0px;
 border: 1px solid rgba(81, 203, 238, 1);
 }
 
-.user-postcode {
-  height: 15em;
-  width: 100%;
-  font-size: 2em;
+.user-posttitleinput, .user-postcode {
+  font-size: .889em;
 }
 
-.new-form a {
-  text-align: right;
+.user-postcode {
+  height: 10.5em;
+  width: 100%;
 }
+
 
 /*modal*/
 
@@ -295,7 +301,7 @@ border: 1px solid rgba(81, 203, 238, 1);
   top: -100%;
   z-index: 11;
   width: 35em;
-  height: 8em;
+  height: 9.5em;
   -webkit-transform: translate(0, -500%);
   -ms-transform: translate(0, -500%);
   transform: translate(0, -500%);
@@ -360,4 +366,56 @@ border: 1px solid rgba(81, 203, 238, 1);
 .modal-footer {
   border-top: #eeeeee solid 1px;
   text-align: right;
+}
+
+
+/*Post View*/
+
+.postview {
+  margin-bottom: 3em;
+}
+
+.postview .language-tag {
+  color: white;
+  font-size: .6em;
+  text-decoration: none;
+  padding: .15em .8em;
+}
+
+.originalpost-code {
+  height: 20em;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+/*Section below original post where user refactors/comments go*/
+
+.flex-postcontainer {
+  margin: 3em 0;
+}
+
+.post-refactors {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1em 0;
+  background-color: #e6e6e6;
+}
+
+.refactorpost-code {
+  height: 15em;
+  width: 100%;
+  background-color: #f9f9f9;
+  margin-bottom: 2em;
+}
+
+.flex-refactorpost {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  width: 80%;
+  margin: 0 auto;
 }
