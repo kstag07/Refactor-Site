@@ -9,7 +9,7 @@ feature 'As an Author I want to to be able to see my name on my posts' do
     fill_in "post_body", with: "Lotsofstuff"
     click_on "Submit"
     page.body.must_include users(:author_user).name
-    click_on "Back"
+    # click_on "Back"
     page.body.must_include users(:author_user).name
   end
 

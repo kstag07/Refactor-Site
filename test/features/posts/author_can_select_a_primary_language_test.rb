@@ -18,7 +18,7 @@ feature 'As an Author I want to to be able select the code language' do
     page.text.must_include "C++"
 
     # and in the Index view.
-    click_on "Back"
+    click_on "Home"
     page.text.must_include "C++"
   end
 end
