@@ -22389,6 +22389,910 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.6ms)
 
 
+<<<<<<< HEAD
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:21:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 664ms (Views: 629.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/refactors.css?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+
+Started GET "/assets/images/dropdown_arrow.png" for 127.0.0.1 at 2014-05-29 17:21:10 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/dropdown_arrow.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.1ms)
+  Rendered /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.8ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2014-05-29 17:21:16 -0700
+Processing by Rails::InfoController#routes as HTML
+  Rendered /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/railties-4.1.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/refactors.css?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+
+Started GET "/assets/images/dropdown_arrow.png" for 127.0.0.1 at 2014-05-29 18:01:30 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/dropdown_arrow.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /Users/SJB/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (22.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OhAnFKhHGpXy0RSQWrktG0ezoyCt6Gan+tGbiOvV9ng="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/assets/refactors.css?body=1" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:01:35 -0700
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 18:01:36 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:01:36 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 18:08:26 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 18:08:26 -0700
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 18:41:50 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 82ms (Views: 62.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:50 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:51 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:51 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:51 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:51 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:51 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 18:41:51 -0700
+
+
+Started GET "/assets/refactors.css?body=1" for 127.0.0.1 at 2014-05-29 18:41:51 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-05-29 18:41:51 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:51 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:51 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:41:51 -0700
+
+
+Started GET "/users/auth/github" for 127.0.0.1 at 2014-05-29 18:41:56 -0700
+
+
+Started GET "/users/auth/github" for 127.0.0.1 at 2014-05-29 18:41:56 -0700
+
+
+Started GET "/users/auth/github/callback?code=2ea6ba125caff3de94f7&state=0efdb31b79b0ca6fb77773fe10d50ba0b313012bca018cc5" for 127.0.0.1 at 2014-05-29 18:41:56 -0700
+Processing by OmniauthCallbacksController#github as HTML
+  Parameters: {"code"=>"2ea6ba125caff3de94f7", "state"=>"0efdb31b79b0ca6fb77773fe10d50ba0b313012bca018cc5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."provider" = 'github' AND "users"."uid" = '4951093'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["current_sign_in_at", "2014-05-30 01:41:57.454923"], ["last_sign_in_at", "2014-05-29 00:50:46.592993"], ["sign_in_count", 5], ["updated_at", "2014-05-30 01:41:57.455739"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 32ms (Views: 25.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/refactors.css?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:41:57 -0700
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qe+69UsxABZE8Sa2Qo7aCURhze7qOxOKpTXTxXqByeU="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/refactors.css?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:42:01 -0700
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2014-05-29 18:45:16 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered comments/_form.html.erb (3.1ms)
+  [1m[35mComment Load (0.9ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?  [["post_id", 5]]
+  Rendered posts/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 25ms (Views: 10.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:45:16 -0700
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-05-29 18:45:21 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:45:21 -0700
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 18:45:27 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:45:27 -0700
+
+
+Started GET "/users/auth/github" for 127.0.0.1 at 2014-05-29 18:45:29 -0700
+
+
+Started GET "/users/auth/github" for 127.0.0.1 at 2014-05-29 18:45:29 -0700
+
+
+Started GET "/users/auth/github/callback?code=1d717c13e4700fdbb363&state=4fbb5ab0382ad420fcaa6bf2508da2acb98f156d24ebd089" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+Processing by OmniauthCallbacksController#github as HTML
+  Parameters: {"code"=>"1d717c13e4700fdbb363", "state"=>"4fbb5ab0382ad420fcaa6bf2508da2acb98f156d24ebd089"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'github' AND "users"."uid" = '4951093'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["current_sign_in_at", "2014-05-30 01:45:30.801892"], ["last_sign_in_at", "2014-05-30 01:41:57.454923"], ["sign_in_count", 6], ["updated_at", "2014-05-30 01:45:30.802316"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/refactors.css?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:45:30 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/refactors.css?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:47:01 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-29 18:48:05 -0700
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 18:48:05 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-05-29 18:48:05 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-29 18:48:05 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 18:48:05 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-05-29 18:48:05 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-05-29 18:48:05 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 18:48:05 -0700
+
+
+Started GET "/assets/refactors.css?body=1" for 127.0.0.1 at 2014-05-29 18:48:05 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-05-29 18:48:05 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 18:48:06 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 18:48:06 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 18:48:06 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-05-29 18:48:06 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 18:48:06 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 18:48:06 -0700
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-05-29 19:00:08 -0700
+Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered posts/_form.html.erb (7.6ms)
+  Rendered posts/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:08 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:08 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:08 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 19:00:08 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:08 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:08 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:11 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:11 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:11 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:11 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:11 -0700
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-05-29 19:00:13 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered posts/_form.html.erb (4.6ms)
+  Rendered posts/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 19:00:13 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:13 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:13 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:13 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:13 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-05-29 19:00:13 -0700
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uRbkdCqSFCVFZMQogT1jppPrf+HV+X77ZxHPQuvRNxg="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/refactors.css?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 19:21:58 -0700
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-05-29 19:22:01 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 19:22:01 -0700
+
+
+Started POST "/users" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nOGFqeYuvk23DAmGoyMoLUeSUEZwug0bjC9tlO6dIU8=", "user"=>{"name"=>"sam_oneill", "email"=>"samo@yahoo.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'samo@yahoo.org' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-05-30 02:22:59.119225"], ["email", "samo@yahoo.org"], ["encrypted_password", "$2a$10$jJdOTBx1DKLE6Z9PdyxpZOmwhWfb5QruHSi8B2NeLly52uYPpGJKe"], ["name", "sam_oneill"], ["updated_at", "2014-05-30 02:22:59.119225"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 5  [["current_sign_in_at", "2014-05-30 02:22:59.122503"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-05-30 02:22:59.122503"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-05-30 02:22:59.122856"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 86ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/refactors.css?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-05-29 19:22:59 -0700
+=======
 Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:35:57 -0700
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by Devise::SessionsController#new as HTML
@@ -37209,3 +38113,4 @@ ActionController::RoutingError (No route matches [GET] "/Assets/svg/help_icon.sv
   Rendered /home/anthony/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.5ms)
   Rendered /home/anthony/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
   Rendered /home/anthony/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (56.6ms)
+>>>>>>> 2f78352819c668fd60d79aa89c132d86b284dc4a

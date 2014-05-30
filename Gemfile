@@ -2,21 +2,16 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'pundit'
-gem 'minitest-rails'
 gem 'rake'
 gem 'redcarpet'
 gem 'rouge'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
 gem 'figaro'
-gem 'binding_of_caller'
-gem 'better_errors'
 gem 'coderay'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -40,20 +35,25 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'pry-stack_explorer'
+  gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
   gem 'spring'
-  gem 'sqlite3'
 end
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
 group :test do
+  gem 'minitest-rails'
   gem 'minitest-rails-capybara'
   gem 'launchy'
+  gem 'simplecov', '~> 0.7.1', :require => false
 end
 
 # Use ActiveModel has_secure_password
@@ -67,4 +67,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
