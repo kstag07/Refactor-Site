@@ -6,6 +6,12 @@ article {
   width: 75%;
 }
 
+a {
+  text-decoration: none;
+  font-size: 0.889em;
+  color: #da6869;
+}
+
 header {
   background-color: #3c4a5b;
   height: 3.72em;
@@ -17,6 +23,10 @@ footer {
   width: 100%;
   color: white;
   background-color: #3c4a5b;
+}
+
+footer p {
+  margin: 0;
 }
 
 .help {
@@ -40,28 +50,13 @@ button, .button {
   text-align: center;
 }
 
-/*.button {
-  width: auto;
-  height: 1.7em;
-  padding: 0 1em;
-  font-size: 1em;
-  background-color: #14bbb1;
-  color: white;
-  font-family: 'Open Sans', sans-serif;
-  border: .1em solid #14bbb1;
-  border-radius: .2em;
-  margin: 1em 0;
-}*/
-
 .flex-button{
   display: flex;
   justify-content: center;
 }
 
-
-
 .minheight {
- min-height: 30%;
+ min-height: 5%;
 }
 
 .minheight:after {
@@ -74,6 +69,7 @@ button, .button {
   justify-content: center;
   flex-flow: column wrap;
   align-content: center;
+  align-items: center;
 }
 
 .flex-filter {
@@ -96,7 +92,7 @@ button, .button {
 
 .logo {
   width: auto;
-  height: 3.9em;
+  height: 4.39em;
 }
 
 .nav{
@@ -156,4 +152,5 @@ vertical-align: bottom;
     display: none;
   }
 }
+
 /**/
