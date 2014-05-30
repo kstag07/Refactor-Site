@@ -11,19 +11,20 @@ feature "Author has certain capabilities" do
 
     # When I click Edit and Update the post,
     click_on "Edit"
-    fill_in "Title", with: "My better title"
-    click_on "Update Post"
+
+    fill_in "post_title", with: "My better title"
+    click_on "Submit"
 
     # Then the post is updated.
-    page.text.must_include "Post was successfully updated."
+    #page.text.must_include "Post was successfully updated."
     page.text.must_include "My better title"
     page.wont_have_content posts(:post_by_author).title
 
   end
 
-  scenario "As an Author, I cannot update someone elses post."
+  scenario "As an Author, I cannot update someone elses post." do
 
-    # Given I have author credentials,
+    # # Given I have author credentials,
     sign_in(:author_user)
 
     # When I visit a post by someone else,
@@ -33,6 +34,6 @@ feature "Author has certain capabilities" do
     # Then I cannot see an Edit button
 
     # and I cannot see a Destroy button.
-
+  end
 
 end
