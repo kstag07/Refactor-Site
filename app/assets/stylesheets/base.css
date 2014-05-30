@@ -169,7 +169,11 @@ vertical-align: bottom;
   color: #da6869;
 }
 
+<<<<<<< HEAD
+@media all and (max-width: 54em) {
+=======
 @media all and (max-width: 60em) {
+>>>>>>> 2f78352819c668fd60d79aa89c132d86b284dc4a
   .nav {
     display: none;
   }

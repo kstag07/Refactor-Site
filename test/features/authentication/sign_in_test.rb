@@ -5,7 +5,7 @@ feature "As a user, I want to sign into my account to access my settings and pos
     visit new_user_session_path
     fill_in "Email", with: users(:author_user).email
     fill_in "Password", with: 'password'
-    click_button "Sign in"
+    click_on "Sign in"
     sign_in(:author_user)
     page.must_have_content "Signed in successfully"
   end
@@ -19,7 +19,7 @@ feature "As a user, I want to sign into my account to access my settings and pos
     OmniAuth.config.add_mock(:twitter,
                             {
                             uid: '12345',
-                            info: { nickname: 'test_twitter_user'},
+                            info: { nickname: 'test_twitter_user', email: 'test_twitter_user@example.com'},
                             })
     click_on "Sign in with Twitter"
     page.must_have_content "test_twitter_user, you are signed in!"
@@ -36,7 +36,7 @@ feature "As a user, I want to sign into my account to access my settings and pos
     OmniAuth.config.add_mock(:github,
                             {
                             uid: '12345',
-                            info: { nickname: 'test_github_user'},
+                            info: { nickname: 'test_github_user', email: 'test_github_user@example.com'},
                             })
     click_on "Sign in with Github"
     page.must_have_content "test_github_user, you are signed in!"

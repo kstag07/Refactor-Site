@@ -4,13 +4,13 @@
 <head>
   <title></title>
   <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-  
+
 </head>
 
 <body>
   <% unless current_user.present? %>
     <section class="hero">
-      <h1>Refactors</h1>  
+      <h1>Refactors</h1>
       <h4 id="herotext">Because every line of code is an opportunity for optimization.</h4>
       <p>Refactors is a community of like-minded coders seeking to improve their code together.</br>
       <p>Post code to be refactored or browse code to refactor and help each other.</p>
@@ -52,7 +52,7 @@
             </div>
             <div class="flex-posttitle">
               <h3><%= link_to post.title, post %></h3>
-              <h4>By: <%= post.author.name %></h4><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <h4>By: <%= link_to post.author.name, user_path(id: post.author) %></h4>
               <a class="language-tag"><%= Post::LANGUAGE_OPTIONS[post.language] %></a>
             </div>
           </section>
@@ -75,7 +75,9 @@
       <div class="modal-register">
         <a href="#" class="btn-close" aria-hidden="true">x</a>
         <div class="modal-registerbody">
-          
+
+
+
           <%= link_to user_omniauth_authorize_path(:github) do %>
             <svg class="gitreg_button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 325 92" enable-background="new 0 0 325 92" xml:space="preserve">
               <path fill="#51B5AF" d="M325 84.8c0 3.976-3.224 7.2-7.2 7.2H7.2C3.224 92 0 88.8 0 84.8V7.2C0 3.2 3.2 0 7.2 0h310.6 c3.976 0 7.2 3.2 7.2 7.2V84.8z"/>

@@ -1,5 +1,5 @@
 <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-<%= stylesheet_link_tag 'reset.css', 'module.css', 'base.css', 'layout.css', 'typography.css', 
+<%= stylesheet_link_tag 'reset.css', 'module.css', 'base.css', 'layout.css', 'typography.css',
 media: "all", "data-turbolinks-track" => true %>
 
 <%= form_for([@post, @comment]) do |f| %>
@@ -19,7 +19,9 @@ media: "all", "data-turbolinks-track" => true %>
     <article class="flex-formcontainer">
       <section class="new-form">
         <form class="new-post">
-          <div class="field">
+
+          <div class="code-field">
+            <%= f.label :content %>
             <%= f.text_area :content, class: "user-postcode" %></a>
             <%= f.hidden_field :post_id %>
           </div>
@@ -31,5 +33,7 @@ media: "all", "data-turbolinks-track" => true %>
       </div>
     </article>
   </main>
-  
+
+
 <% end %>
+

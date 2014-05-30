@@ -16,8 +16,7 @@ feature "Vistor has certain capabilities" do
     #Given that I am not signed in,
 
     #When I visit the posts page,
-    visit posts_path
-
+    visit root_path
     click_on "New Post!"   # New Post! link is in the header now.
 
     #Then I will be redirected to the User Sign-in page.
