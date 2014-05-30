@@ -7,7 +7,7 @@
     <a class="language-tag">
       <%= Post::LANGUAGE_OPTIONS[@post.language] %>
     </a>
-    <pre class="originalpost-code">
+    <pre>
       <%= markdown @post.body %>
     </pre>
     <a href="#postrefactor" class="button">Refactor This</a>
@@ -59,8 +59,8 @@
   <article class="flex-formcontainer">
     <section class="new-form">
         <div>
+           <% if current_user.present? %>
           <label><h3>Post your refactor code:</h3></label>
-          <% if current_user.present? %>
           <%= render 'comments/form' %>
           <a name="postrefactor"></a>
           <% end %>
