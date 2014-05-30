@@ -23,6 +23,7 @@ class CommentsController < ApplicationController
     current_user.comments << @comment
   end
     respond_to do |format|
+
       if @comment.save
 
         @post.comments << @comment
