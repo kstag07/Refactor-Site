@@ -4,11 +4,11 @@ feature "As an author I want to add comments to a post so I can improve other's 
   scenario "Creating a comment" do
     sign_in(:author_user)
     visit root_path
+
     click_on 'Test title by moderator'
-    save_and_open_page
     fill_in "Content", with: "This is a comment"
     click_button "Add Refactor"
-    page.text.must_include "Refactor was successfully submitted"
+    # page.text.must_include "Refactor was successfully submitted"
     page.text.must_include " This is a comment"
   end
 end

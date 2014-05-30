@@ -48,6 +48,12 @@
                 <%= markdown comment.content %>
               </pre>
             </div>
+            <div>
+              <% if current_user.present? && (current_user.mod? || (current_user.author? &&  @post.author == current_user)) %>
+              <%= link_to 'Edit Refactor', edit_post_comment_path(@post, comment) %>
+              <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+            <% end %>
           </section>
         <% end %>
       <% end %>

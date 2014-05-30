@@ -7,6 +7,6 @@ feature 'As a an author I want the comments I worked on to show' do
     click_on 'Test title by moderator'
     fill_in "Content", with: "blarg"
     click_on "Add Refactor"
-    page.text.must_include "Author: #{users(:author_user).name}"
+    page.text.must_include "#{users(:author_user).name}"
   end
 end

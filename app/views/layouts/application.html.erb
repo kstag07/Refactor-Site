@@ -36,14 +36,9 @@
           <% end %>
         <div class="account">
           <% if current_user.present? %>
-<<<<<<< HEAD
-            <%= link_to current_user.email, user_path(current_user) %> /
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-=======
             <%= link_to 'New Post!', '/markdownhelp', class: "new-post-button" %>
               <%= link_to current_user.name, user_path(current_user) %> /
               <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
->>>>>>> 2f78352819c668fd60d79aa89c132d86b284dc4a
           <% else %>
             <%= link_to "Sign up |", new_user_registration_path, :class => "signup" %>
             <%= link_to "| Sign in", new_user_session_path, :class => "login" %>
@@ -52,7 +47,8 @@
       </nav>
     </header>
     <section>
-     <p class="notice"><%= notice %></p>
+
+      <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </section>
