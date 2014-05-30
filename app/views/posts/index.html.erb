@@ -74,22 +74,22 @@
           <form>
             <input type="text" placeholder="Email">
             <input type="text" placeholder="Password">
-          </form>
-          <a href="#" class="button">login</a>
+           </form>
+         <a href="#" class="button">login</a>
         </div>
       </div>
       <div class="modal-register">
         <a href="#" class="btn-close" aria-hidden="true">x</a>
         <div class="modal-registerbody">
           
-          <a href="">
+          <%= link_to user_omniauth_authorize_path(:github) do %>
             <svg class="gitreg_button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 325 92" enable-background="new 0 0 325 92" xml:space="preserve">
               <path fill="#51B5AF" d="M325 84.8c0 3.976-3.224 7.2-7.2 7.2H7.2C3.224 92 0 88.8 0 84.8V7.2C0 3.2 3.2 0 7.2 0h310.6 c3.976 0 7.2 3.2 7.2 7.2V84.8z"/>
               <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M51.323 21.613c-13.807 0-25.003 11.195-25.003 25 c0 11 7.2 20.4 17.1 23.725c1.25 0.2 1.707-0.543 1.707-1.205c0-0.594-0.022-2.166-0.034-4.253 c-6.955 1.511-8.423-3.352-8.423-3.352c-1.137-2.889-2.776-3.658-2.776-3.658c-2.27-1.551 0.172-1.52 0.172-1.52 c2.509 0.2 3.8 2.6 3.8 2.577c2.231 3.8 5.9 2.7 7.3 2.078c0.227-1.616 0.873-2.718 1.588-3.343 c-5.552-0.631-11.39-2.776-11.39-12.358c0-2.73 0.974-4.962 2.574-6.71c-0.257-0.633-1.115-3.175 0.245-6.617 c0 0 2.099-0.672 6.9 2.563c1.994-0.555 4.133-0.832 6.26-0.842c2.123 0 4.3 0.3 6.3 0.8 c4.774-3.236 6.869-2.563 6.869-2.563c1.364 3.4 0.5 6 0.2 6.617c1.603 1.7 2.6 4 2.6 6.7 c0 9.606-5.846 11.72-11.417 12.339c0.898 0.8 1.7 2.3 1.7 4.631c0 3.343-0.031 6.04-0.031 6.9 c0 0.7 0.5 1.4 1.7 1.202c9.927-3.313 17.085-12.679 17.085-23.722C76.329 32.8 65.1 21.6 51.3 21.613z"/>
               <rect x="86.5" y="40.1" fill="none" width="208.1" height="15.9"/>
-              <text transform="matrix(1 0 0 1 88.1648 53.7366)" fill="#FFFFFF" font-family="'OpenSans-Semibold'" font-size="18">REGISTER WITH GITHUB</text>
+              <text transform="matrix(1 0 0 1 88.1648 53.7366)" fill="#FFFFFF" font-family="'OpenSans-Semibold'" font-size="18">SIGN IN WITH GITHUB</text>
             </svg>
-          </a>
+          <% end %>
         </div>
       </div>
     </div>
