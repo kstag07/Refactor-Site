@@ -246,6 +246,7 @@ border: 1px solid rgba(81, 203, 238, 1);
 .user-postcode {
   height: 10.5em;
   width: 100%;
+  font-size: .889em;
 }
 
 

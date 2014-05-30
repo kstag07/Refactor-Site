@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:edit, :update, :destroy]
   before_action :set_post
-  before_action :authenticate_user!, except: [:show ]
+  #before_action :authenticate_user!, except: [:show ]
 
   def index
   @comments = Comment.all
@@ -19,10 +19,12 @@ end
 
   def create
     @comment = @post.comments.build(comment_params)
+    if current_user.present?
     current_user.comments << @comment
-
+  end
     respond_to do |format|
       if @comment.save
+
         @post.comments << @comment
         format.html { redirect_to @post, notice: 'Refactor was successfully submitted.' }
         format.json { render :show, status: :created, location: @post }
