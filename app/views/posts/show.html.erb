@@ -38,7 +38,7 @@
             </div>
             <div class="flex-refactorpost">
               <h4><%= comment.author.name %></h4>
-              <pre class="refactorpost-code">
+              <pre>
                 <%= markdown comment.content %>
               </pre>
             </div>
@@ -58,13 +58,13 @@
 
   <article class="flex-formcontainer">
     <section class="new-form">
+      <form class="new-post">
         <div>
-          <label><h3>Post your refactor code:</h3></label>
-          <% if current_user.present? %>
+        <label><h3>Post your refactor code:</h3></label>
           <%= render 'comments/form' %>
-          <a name="postrefactor"></a>
-          <% end %>
+        <a name="postrefactor"></a>
         </div>
+      </form>
     </section>
   </article>
 </main>
@@ -77,4 +77,11 @@
   <%= link_to 'Home', posts_path %>
 </p>
 
-
+<p>
+  <% @post.comments.each do |comment| %>
+    <% unless comment.new_record? %>
+      <%= comment.author.name %>
+      <%= comment.content %>
+    <% end %>
+  <% end %>
+</p>
