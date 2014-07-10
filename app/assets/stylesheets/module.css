@@ -410,7 +410,7 @@ border: 1px solid rgba(81, 203, 238, 1);
 }
 
 .refactorpost-code {
-  height: 15em;
+  height: auto;
   width: 100%;
   background-color: #f9f9f9;
   margin-bottom: 2em;
@@ -425,4 +425,10 @@ border: 1px solid rgba(81, 203, 238, 1);
   align-items: flex-start;
   width: 80%;
   margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+  {.CodeRay{
+    height: 5vh;
+  }
+  }
 }
