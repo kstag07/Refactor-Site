@@ -61918,3 +61918,457 @@ Completed 200 OK in 68ms (Views: 42.6ms | ActiveRecord: 1.6ms)
 
 
 Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-07-10 16:07:44 -0700
+
+
+Started GET "/posts/1049712694" for 127.0.0.1 at 2014-07-10 16:09:49 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1049712694"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 1049712694]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016536]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?  [["post_id", 1049712694]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016536]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 696016536]]
+  Rendered posts/show.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:49 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:49 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:50 -0700
+
+
+Started GET "/users/auth/github" for 127.0.0.1 at 2014-07-10 16:09:54 -0700
+
+
+Started GET "/users/auth/github" for 127.0.0.1 at 2014-07-10 16:09:55 -0700
+
+
+Started GET "/users/auth/github/callback?code=b1fff38d0b9770f2fd07&state=359b0ef50ffeb41f214a5d6b9c0944fc2c43fd27b5a0433d" for 127.0.0.1 at 2014-07-10 16:09:55 -0700
+Processing by OmniauthCallbacksController#github as HTML
+  Parameters: {"code"=>"b1fff38d0b9770f2fd07", "state"=>"359b0ef50ffeb41f214a5d6b9c0944fc2c43fd27b5a0433d"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'github' AND "users"."uid" = '6423978'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 696016536[0m  [["current_sign_in_at", "2014-07-10 23:09:56.414550"], ["last_sign_in_at", "2014-07-10 22:36:57.503410"], ["sign_in_count", 8], ["updated_at", "2014-07-10 23:09:56.415274"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 696016536  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016536]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 696016536]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 381897231]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 696016535]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016535]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 696016535]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016535]]
+  Rendered posts/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:56 -0700
+
+
+Started GET "/posts/1049712694" for 127.0.0.1 at 2014-07-10 16:09:58 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1049712694"}
+  [1m[35mPost Load (17.3ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 1049712694]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016536]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 696016536  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?[0m  [["post_id", 1049712694]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 696016536]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016536]]
+  Rendered comments/_form.html.erb (4.9ms)
+  Rendered posts/show.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 64ms (Views: 38.8ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:58 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:58 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:58 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-07-10 16:09:58 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:59 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:59 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:59 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:59 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:59 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:59 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:59 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:59 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-10 16:09:59 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-07-10 16:09:59 -0700
+
+
+Started GET "/posts/1049712694" for 127.0.0.1 at 2014-07-10 16:10:18 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1049712694"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 1049712694]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016536]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 696016536  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?[0m  [["post_id", 1049712694]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 696016536]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016536]]
+  Rendered comments/_form.html.erb (4.6ms)
+  Rendered posts/show.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 41ms (Views: 37.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:18 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:18 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:18 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:18 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:18 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:18 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:18 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-07-10 16:10:19 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-07-10 16:10:19 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-07-10 16:10:19 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-07-10 16:10:19 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-07-10 16:10:19 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-07-10 16:10:19 -0700
+
+
+Started GET "/posts/1049712694" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1049712694"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 1049712694]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016536]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 696016536  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?[0m  [["post_id", 1049712694]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 696016536]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016536]]
+  Rendered comments/_form.html.erb (4.7ms)
+  Rendered posts/show.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-07-10 16:10:41 -0700
+
+
+Started GET "/posts/1049712694" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1049712694"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 1049712694]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016536]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 696016536  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?[0m  [["post_id", 1049712694]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 696016536]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 696016536]]
+  Rendered comments/_form.html.erb (5.1ms)
+  Rendered posts/show.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-07-10 16:11:01 -0700
+
+
+Started GET "/posts?utf8=%E2%9C%93&search=kevin" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"kevin"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 696016536  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"  WHERE (title LIKE '%kevin%' OR language LIKE '%kevin%')  ORDER BY posts.created_at desc[0m
+  Rendered posts/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:34 -0700
+
+
+Started GET "/posts?utf8=%E2%9C%93&search=kstag07" for 127.0.0.1 at 2014-07-10 16:11:42 -0700
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"kstag07"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 696016536  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"  WHERE (title LIKE '%kstag07%' OR language LIKE '%kstag07%')  ORDER BY posts.created_at desc[0m
+  Rendered posts/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:42 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-07-10 16:11:43 -0700
