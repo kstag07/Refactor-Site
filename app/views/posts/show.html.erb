@@ -10,7 +10,11 @@
     <pre>
       <%= markdown @post.body %>
     </pre>
-    <a href="#postrefactor" class="button">Refactor This</a>
+    <% if current_user.present? %>
+      <a href="#postrefactor" class="button">Refactor This</a>
+    <% else %>
+      <%= link_to "Refactor This", new_user_session_path, class: "button" %>
+    <% end %>
   </section>
 </article>
 
