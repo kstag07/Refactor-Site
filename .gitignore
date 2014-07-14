@@ -16,7 +16,7 @@
 /tmp
 
 # Ignore the SimpleCov files.
-coverage
+/coverage
 
 # Ignore application configuration
 /config/application.yml
