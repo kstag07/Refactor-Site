@@ -7,7 +7,7 @@
     <a class="language-tag">
       <%= Post::LANGUAGE_OPTIONS[@post.language] %>
     </a>
-    <pre class="originalpost-code">
+    <pre>
       <%= markdown @post.body %>
     </pre>
     <a href="#postrefactor" class="button">Refactor This</a>
@@ -19,26 +19,28 @@
 <div class="post-refactors">
   <article>
     <div class="flex-postcontainer">
-
 <!-- Each of the "refactorpost" is an individual user generated refactor -->
       <% @post.comments.each do |comment| %>
         <% unless comment.new_record? %>
           <section class="refactorpost">
             <div class="flex-vote">
-              <a href="#">
+              <a>
+                <%= link_to "Upvote", upvote_post_comment_path(@post, comment), method: :put %>
                 <svg class="voteup" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 26.279 13.502" enable-background="new 0 0 26.279 13.502" xml:space="preserve">
                 <polygon points="0,13.5 13.1,0 26.3,13.5"/>
                 </svg>
               </a>
-              <span class="votecounter">vote count</span>
-              <a href="#" class="votedown"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 26.279 13.502" enable-background="new 0 0 26.279 13.502" xml:space="preserve">
-              <polygon points="26.3,0 13.1,13.5 0,0"/>
-              </svg>
+              <span class="votecounter"><%= comment.votes_for.size %></span>
+              <a>
+                <svg class="votedown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 26.279 13.502" enable-background="new 0 0 26.279 13.502" xml:space="preserve">
+                <polygon points="26.3,0 13.1,13.5 0,0"/>
+                </svg>
+                <%= link_to "Downvote", downvote_post_comment_path(@post, comment), method: :put %>
               </a>
             </div>
             <div class="flex-refactorpost">
               <h4><%= comment.author.name %></h4>
-              <pre class="refactorpost-code">
+              <pre>
                 <%= markdown comment.content %>
               </pre>
             </div>
@@ -58,13 +60,13 @@
 
   <article class="flex-formcontainer">
     <section class="new-form">
+      <form class="new-post">
         <div>
-          <label><h3>Post your refactor code:</h3></label>
-          <% if current_user.present? %>
+        <label><h3>Post your refactor code:</h3></label>
           <%= render 'comments/form' %>
-          <a name="postrefactor"></a>
-          <% end %>
+        <a name="postrefactor"></a>
         </div>
+      </form>
     </section>
   </article>
 </main>
@@ -77,4 +79,11 @@
   <%= link_to 'Home', posts_path %>
 </p>
 
-
+<p>
+  <% @post.comments.each do |comment| %>
+    <% unless comment.new_record? %>
+      <%= comment.author.name %>
+      <%= comment.content %>
+    <% end %>
+  <% end %>
+</p>

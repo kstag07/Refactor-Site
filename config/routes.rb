@@ -2,7 +2,16 @@ Rails.application.routes.draw do
 devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   resources :users
   resources :posts do
-    resources :comments
+    member do
+      put "upvote", to: "posts#upvote"
+      put "downvote", to: "posts#downvote"
+    end
+    resources :comments do
+      member do
+        put "upvote", to: "comments#upvote"
+        put "downvote", to: "comments#downvote"
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
