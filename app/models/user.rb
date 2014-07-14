@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :posts, foreign_key: "author_id"
   has_many :comments, foreign_key: "author_id"
 
+  acts_as_voter
+
   def author?
     role == 'author'
   end

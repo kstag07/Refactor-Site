@@ -1,7 +1,15 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy, :upvote, :downvote]
   before_action :set_post
   #before_action :authenticate_user!, except: [:show ]
+
+  def upvote
+    @comment.liked_by current_user
+  end
+
+  def downvote
+    @comment.unliked_by current_user
+  end
 
   def index
     @comments = Comment.all
