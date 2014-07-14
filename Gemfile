@@ -9,6 +9,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-github'
 gem 'figaro'
 gem 'coderay'
+gem 'pg_search', '~> 0.7.3'
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
@@ -37,7 +40,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'pry-stack_explorer'
-  gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
 
@@ -45,11 +47,12 @@ end
 
 group :development do
   gem 'spring'
+  gem 'pg'
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
+  gem 'pg'
 end
 
 group :test do
@@ -57,6 +60,7 @@ group :test do
   gem 'minitest-rails-capybara'
   gem 'launchy'
   gem 'simplecov', '~> 0.7.1', :require => false
+  gem 'sqlite3'
 end
 
 # Use ActiveModel has_secure_password
