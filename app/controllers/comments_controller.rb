@@ -5,10 +5,12 @@ class CommentsController < ApplicationController
 
   def upvote
     @comment.liked_by current_user
+    redirect_to @post
   end
 
   def downvote
     @comment.unliked_by current_user
+    redirect_to @post
   end
 
   def index

@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def upvote
     @post.liked_by current_user
+    redirect_to
   end
 
   def downvote
