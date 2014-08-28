@@ -7,7 +7,7 @@
     <a class="language-tag">
       <%= Post::LANGUAGE_OPTIONS[@post.language] %>
     </a>
-    <pre>
+    <pre class="originalpost-code">
       <%= markdown @post.body %>
     </pre>
     <p>
@@ -51,7 +51,7 @@
             </div>
             <div class="flex-refactorpost">
               <h4 class="username"><%= comment.author.name %></h4>
-              <pre>
+              <pre class="refactorpost-code">
                 <%= markdown comment.content %>
               </pre>
               <p>
@@ -80,20 +80,3 @@
     </section>
   </article>
 </main>
-
-<p>
- <% if current_user.present? && (current_user.mod? || (current_user.author? &&  @post.author == current_user)) %>
-   <%= link_to 'Edit', edit_post_path(@post) %> |
-   <%= link_to 'Destroy Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to destroy this post?' } %> |
- <% end %>
- <%= link_to 'Home', posts_path %>
-</p>
- 
-<p>
-  <% @post.comments.each do |comment| %>
-    <% unless comment.new_record? %>
-      <%= comment.author.name %>
-      <%= comment.content %>
-    <% end %>
-  <% end %>
-</p>
