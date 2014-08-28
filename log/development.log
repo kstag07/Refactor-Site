@@ -67688,3 +67688,688 @@ Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-07-12 23:40:39 -0
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1461.8ms)[0m  [1mCREATE DATABASE "development" ENCODING = 'unicode'[0m
+  [1m[36m (16.8ms)[0m  [1mCREATE DATABASE "development" ENCODING = 'unicode'[0m
+PG::DuplicateDatabase: ERROR:  database "development" already exists
+: CREATE DATABASE "development" ENCODING = 'unicode'
+  [1m[35m (39.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (53.8ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20140523232552)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (76.4ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (38.0ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (38.6ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140523232552"]]
+  [1m[35m (15.5ms)[0m  COMMIT
+Migrating to CreatePosts (20140523233005)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (70.1ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "title" character varying(255), "body" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140523233005"]]
+  [1m[35m (16.8ms)[0m  COMMIT
+Migrating to AddAuthorIdToPosts (20140526171853)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "posts" ADD COLUMN "author_id" integer
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140526171853"]]
+  [1m[35m (9.8ms)[0m  COMMIT
+Migrating to CreateComments (20140526200510)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (77.0ms)[0m  CREATE TABLE "comments" ("id" serial primary key, "author" character varying(255), "author_url" character varying(255), "user_ip" character varying(255), "author_email" character varying(255), "referrer" character varying(255), "content" text, "post_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (32.4ms)[0m  [1mCREATE  INDEX  "index_comments_on_post_id" ON "comments"  ("post_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140526200510"]]
+  [1m[36m (15.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddDefaultToUsersRole (20140526211852)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (156.9ms)[0m  [1mALTER TABLE "users" ADD COLUMN "role" character varying(255) DEFAULT 'author'[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140526211852"]]
+  [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+Migrating to AddOmniauthToUsers (20140527154543)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD COLUMN "provider" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "uid" character varying(255)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140527154543"]]
+  [1m[35m (10.8ms)[0m  COMMIT
+Migrating to AddNameToUsers (20140527165502)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD COLUMN "name" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140527165502"]]
+  [1m[35m (9.9ms)[0m  COMMIT
+Migrating to AddAuthorIdToComments (20140527220615)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "comments" ADD COLUMN "author_id" integer
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140527220615"]]
+  [1m[35m (9.2ms)[0m  COMMIT
+Migrating to AddLanguageToPosts (20140527221425)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "posts" ADD COLUMN "language" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140527221425"]]
+  [1m[35m (8.9ms)[0m  COMMIT
+Migrating to CreatePgSearchDocuments (20140713040551)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (81.6ms)[0m  CREATE TABLE "pg_search_documents" ("id" serial primary key, "content" text, "searchable_id" integer, "searchable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140713040551"]]
+  [1m[35m (11.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-28 15:26:16 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (32.7ms)[0m  SELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc
+  Rendered posts/index.html.erb within layouts/application (48.6ms)
+Completed 200 OK in 1750ms (Views: 1601.8ms | ActiveRecord: 32.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-08-28 15:26:18 -0700
+
+
+Started GET "/assets/images/dropdown_arrow.png" for 127.0.0.1 at 2014-08-28 15:26:19 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/dropdown_arrow.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/anthony/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/anthony/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/anthony/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/anthony/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/anthony/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.4ms)
+  Rendered /home/anthony/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (47.7ms)
+  Rendered /home/anthony/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (100.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-28 15:26:24 -0700
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.7ms)[0m  [1mSELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc[0m
+  Rendered posts/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-28 15:26:31 -0700
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc
+  Rendered posts/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/auth/github" for 127.0.0.1 at 2014-08-28 15:26:32 -0700
+
+
+Started GET "/users/auth/github" for 127.0.0.1 at 2014-08-28 15:26:32 -0700
+
+
+Started GET "/users/auth/github/callback?code=64b166a62c54598b49de&state=1a65b95a193cd695c90aeca493015cc980eb7e7faecd91bd" for 127.0.0.1 at 2014-08-28 15:26:33 -0700
+Processing by OmniauthCallbacksController#github as HTML
+  Parameters: {"code"=>"64b166a62c54598b49de", "state"=>"1a65b95a193cd695c90aeca493015cc980eb7e7faecd91bd"}
+  [1m[36mUser Load (39.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'github' AND "users"."uid" = '6015572'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'anthonyuchung@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (23.4ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "provider", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-08-28 22:26:34.451539"], ["email", "anthonyuchung@gmail.com"], ["name", "tonycchung"], ["provider", "github"], ["uid", "6015572"], ["updated_at", "2014-08-28 22:26:34.451539"]]
+  [1m[36m (258.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-08-28 22:26:34.750123"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-08-28 22:26:34.750123"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-08-28 22:26:34.753234"]]
+  [1m[35m (14.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 627ms (ActiveRecord: 343.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-28 15:26:34 -0700
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.8ms)[0m  SELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc
+  Rendered posts/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-08-28 15:26:38 -0700
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered posts/_form.html.erb (146.7ms)
+  Rendered posts/new.html.erb within layouts/application (166.3ms)
+Completed 200 OK in 264ms (Views: 253.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/markdownhelp" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+Processing by PostsController#help as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered posts/help.html within layouts/application (0.9ms)
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/module.css?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/base.css?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-08-28 15:27:33 -0700
+
+
+Started GET "/assets/REFACTORS_LOGO.svg" for 127.0.0.1 at 2014-08-28 15:27:34 -0700
+
+
+Started POST "/posts" for 127.0.0.1 at 2014-08-28 15:27:34 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ldJ99CvX9mC448W3/g+S9e5JBAZGLme2ldf+hxSXEjM=", "post"=>{"title"=>"fizzbuzz", "language"=>"ruby", "body"=>"```\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n```"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("author_id", "body", "created_at", "language", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author_id", 1], ["body", "```\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n```"], ["created_at", "2014-08-28 22:27:34.303456"], ["language", "ruby"], ["title", "fizzbuzz"], ["updated_at", "2014-08-28 22:27:34.303456"]]
+  [1m[35m (36.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 197ms (ActiveRecord: 37.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2014-08-28 15:27:34 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mComment Load (41.7ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = $1  [["post_id", 1]]
+  Rendered comments/_form.html.erb (21.2ms)
+  Rendered posts/show.html.erb within layouts/application (431.0ms)
+Completed 200 OK in 541ms (Views: 423.3ms | ActiveRecord: 47.3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-28 15:27:35 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-08-28 15:27:35 -0700
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2014-08-28 15:27:39 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered posts/_form.html.erb (10.8ms)
+  Rendered posts/edit.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 50ms (Views: 43.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-08-28 15:27:39 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-28 15:27:39 -0700
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2014-08-28 15:27:45 -0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ldJ99CvX9mC448W3/g+S9e5JBAZGLme2ldf+hxSXEjM=", "post"=>{"title"=>"fizzbuzz", "language"=>"ruby", "body"=>"```Ruby\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n```"}, "commit"=>"Submit", "id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = 1  [["body", "```Ruby\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n```"], ["updated_at", "2014-08-28 22:27:45.588088"]]
+  [1m[36m (36.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 47ms (ActiveRecord: 38.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2014-08-28 15:27:45 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  Rendered comments/_form.html.erb (6.3ms)
+  Rendered posts/show.html.erb within layouts/application (77.2ms)
+Completed 200 OK in 89ms (Views: 84.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-08-28 15:27:46 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-28 15:27:46 -0700
+
+
+Started POST "/posts/1/comments" for 127.0.0.1 at 2014-08-28 15:28:19 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ldJ99CvX9mC448W3/g+S9e5JBAZGLme2ldf+hxSXEjM=", "comment"=>{"content"=>"```Ruby\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n```", "post_id"=>"1"}, "commit"=>"Add Refactor", "post_id"=>"1"}
+  [1m[35mPost Load (1.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "comments" ("author_id", "content", "created_at", "post_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_id", 1], ["content", "```Ruby\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n```"], ["created_at", "2014-08-28 22:28:19.097688"], ["post_id", 1], ["updated_at", "2014-08-28 22:28:19.097688"]]
+  [1m[35m (14.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 35ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2014-08-28 15:28:19 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mComment Load (0.6ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = $1  [["post_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_form.html.erb (8.0ms)
+  Rendered posts/show.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 48ms (Views: 40.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-28 15:28:19 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-08-28 15:28:19 -0700
+
+
+Started GET "/posts/1/comments/1/edit" for 127.0.0.1 at 2014-08-28 15:28:23 -0700
+Processing by CommentsController#edit as HTML
+  Parameters: {"post_id"=>"1", "id"=>"1"}
+  [1m[35mComment Load (0.4ms)[0m  SELECT  "comments".* FROM "comments"  WHERE "comments"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_form.html.erb (9.5ms)
+  Rendered comments/edit.html.erb within layouts/application (11.8ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 50ms (Views: 43.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-28 15:28:23 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-08-28 15:28:23 -0700
+
+
+Started PATCH "/posts/1/comments/1" for 127.0.0.1 at 2014-08-28 15:28:31 -0700
+Processing by CommentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ldJ99CvX9mC448W3/g+S9e5JBAZGLme2ldf+hxSXEjM=", "comment"=>{"content"=>"```Ruby\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n```", "post_id"=>"1"}, "commit"=>"Add Refactor", "post_id"=>"1", "id"=>"1"}
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT  "comments".* FROM "comments"  WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.8ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "comments" SET "content" = $1, "updated_at" = $2 WHERE "comments"."id" = 1  [["content", "```Ruby\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n\r\ndef FizzBuzz(num)\r\n  if num % 15\r\n    puts 'FizzBuzz'\r\n  elsif num % 3\r\n    puts 'Fizz'\r\n  elsif num % 5\r\n    puts 'Buzz'\r\n  else\r\n    puts num\r\n  end\r\nend\r\n```"], ["updated_at", "2014-08-28 22:28:31.921392"]]
+  [1m[36m (8.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 27ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2014-08-28 15:28:31 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = $1  [["post_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_form.html.erb (4.5ms)
+  Rendered posts/show.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 38ms (Views: 32.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-28 15:28:32 -0700
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-08-28 15:28:32 -0700
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2014-08-28 15:28:42 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered comments/_form.html.erb (4.2ms)
+  Rendered posts/show.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 33ms (Views: 25.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/typography.css?body=1" for 127.0.0.1 at 2014-08-28 15:28:42 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-28 15:28:42 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-28 15:28:44 -0700
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (14.6ms)[0m  SELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc
+  Rendered posts/index.html.erb within layouts/application (70.1ms)
+Completed 500 Internal Server Error in 79ms
+
+NoMethodError - undefined method `upvote_post_path' for #<#<Class:0x007f79886bac20>:0x007f7978581f30>:
+   () home/anthony/code_fellows/Refactor-Site/app/views/posts/index.html.erb:43:in `block in _app_views_posts_index_html_erb___638406550118706728_70079976966500'
+  activerecord (4.1.1) lib/active_record/relation/delegation.rb:46:in `each'
+   () home/anthony/code_fellows/Refactor-Site/app/views/posts/index.html.erb:39:in `_app_views_posts_index_html_erb___638406550118706728_70079976966500'
+  actionview (4.1.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.1) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.1) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.1) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () home/anthony/.rbenv/versions/2.1.1/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.1) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  omniauth (1.2.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.1) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.1) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () home/anthony/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () home/anthony/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () home/anthony/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-28 15:28:44 -0700
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"   ORDER BY posts.created_at desc
+  Rendered posts/index.html.erb within layouts/application (22.7ms)
+Completed 500 Internal Server Error in 30ms
+
+NoMethodError - undefined method `upvote_post_path' for #<#<Class:0x007f79886bac20>:0x007f79789040b8>:
+   () home/anthony/code_fellows/Refactor-Site/app/views/posts/index.html.erb:43:in `block in _app_views_posts_index_html_erb___638406550118706728_70079978406000'
+  activerecord (4.1.1) lib/active_record/relation/delegation.rb:46:in `each'
+   () home/anthony/code_fellows/Refactor-Site/app/views/posts/index.html.erb:39:in `_app_views_posts_index_html_erb___638406550118706728_70079978406000'
+  actionview (4.1.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.1) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.1) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.1) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () home/anthony/.rbenv/versions/2.1.1/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.1) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  omniauth (1.2.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.1) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.1) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () home/anthony/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () home/anthony/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () home/anthony/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70079844615300/variables" for 127.0.0.1 at 2014-08-28 15:28:44 -0700
