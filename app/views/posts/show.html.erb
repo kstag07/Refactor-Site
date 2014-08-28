@@ -3,7 +3,7 @@
 <article class="postview">
   <section>
     <h3 class="postview"><%= @post.title %></h3>
-    <h3 class="username"><%= @post.author.name %></h3>
+    <h3 class="username"><%= link_to @post.author.name, user_path(id: @post.author), class: "username" %></h3>
     <a class="language-tag">
       <%= Post::LANGUAGE_OPTIONS[@post.language] %>
     </a>
@@ -50,7 +50,7 @@
               </a>
             </div>
             <div class="flex-refactorpost">
-              <h4 class="username"><%= comment.author.name %></h4>
+              <h4 class="username"><%= link_to comment.author.name, user_path(id: comment.author), class: "username" %></h4>
               <pre class="refactorpost-code">
                 <%= markdown comment.content %>
               </pre>
@@ -70,13 +70,11 @@
 
   <article class="flex-formcontainer">
     <section class="new-form">
-      <form class="new-post">
-        <div>
-          <label><h3>Post your refactor code:</h3></label>
-          <%= render 'comments/form' %>
-          <a name="postrefactor"></a>
-        </div>
-      </form>
+      <div>
+        <label><h3>Post your refactor code:</h3></label>
+        <%= render 'comments/form' %>
+        <a name="postrefactor"></a>
+      </div>
     </section>
   </article>
 </main>
