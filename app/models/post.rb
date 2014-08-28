@@ -1,7 +1,10 @@
 class Post < ActiveRecord::Base
   belongs_to :author, class_name: "User"
   has_many :comments
-
+  include PgSearch
+  pg_search_scope :search, against: [:title, :body, :language],
+    using: {tsearch: {dictionary: "english"}},
+    associated_against: {author: :name, comments: [:author, :content]}
   LANGUAGE_OPTIONS = {'c' => 'C',
                       'clojure' => 'Clojure',
                       'coffeescript' => 'Coffee Ccript',
@@ -39,9 +42,9 @@ class Post < ActiveRecord::Base
 
   validates_inclusion_of :language, :in => LANGUAGE_OPTIONS
 
-  def self.search(search)
-    if search
-      Post.where("title LIKE ? OR language LIKE ?", "%#{search}%", "%#{search}%")
+  def self.text_search(query)
+    if query
+      search(query)
     else
       Post.all
     end

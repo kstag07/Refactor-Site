@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     if params[:filter]
       @posts = Post.filter(params[:filter]).includes(:comments).order("comments.created_at desc").order("posts.created_at desc")
     else
-      @posts = Post.search(params[:search]).order("posts.created_at desc")
+      @posts = Post.text_search(params[:query]).order("posts.created_at desc")
     end
   end
 

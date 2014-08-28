@@ -7,10 +7,20 @@
     <a class="language-tag">
       <%= Post::LANGUAGE_OPTIONS[@post.language] %>
     </a>
-    <pre class="originalpost-code">
+    <pre>
       <%= markdown @post.body %>
     </pre>
-    <a href="#postrefactor" class="button">Refactor This</a>
+    <p>
+      <% if current_user.present? && (current_user.mod? || (current_user.author? &&  @post.author == current_user)) %>
+        <%= link_to 'Edit Post', edit_post_path(@post) %> |
+        <%= link_to 'Destroy Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to destroy this post?' } %>
+      <% end %>
+    </p>
+    <% if current_user.present? %>
+      <a href="#postrefactor" class="button">Refactor This</a>
+    <% else %>
+      <%= link_to "Refactor This", new_user_session_path, class: "button" %>
+    <% end %>
   </section>
 </article>
 
@@ -37,17 +47,16 @@
               </a>
             </div>
             <div class="flex-refactorpost">
-              <h4><%= comment.author.name %></h4>
+              <h4 class="username"><%= comment.author.name %></h4>
               <pre class="refactorpost-code">
                 <%= markdown comment.content %>
               </pre>
+              <p>
+                <% if current_user.present? && (current_user.mod? || (current_user.author? &&  @post.author == current_user)) %>
+                <%= link_to 'Edit Refactor |', edit_post_comment_path(@post, comment) %>
+                <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
             </div>
-            <div>
-              <% if current_user.present? && (current_user.mod? || (current_user.author? &&  @post.author == current_user)) %>
-              <%= link_to 'Edit Refactor', edit_post_comment_path(@post, comment) %>
-              <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-            <% end %>
           </section>
         <% end %>
       <% end %>
@@ -59,8 +68,8 @@
   <article class="flex-formcontainer">
     <section class="new-form">
         <div>
+           <% if current_user.present? %>
           <label><h3>Post your refactor code:</h3></label>
-          <% if current_user.present? %>
           <%= render 'comments/form' %>
           <a name="postrefactor"></a>
           <% end %>
@@ -68,13 +77,5 @@
     </section>
   </article>
 </main>
-
-<p>
-  <% if current_user.present? && (current_user.mod? || (current_user.author? &&  @post.author == current_user)) %>
-    <%= link_to 'Edit', edit_post_path(@post) %> |
-    <%= link_to 'Destroy Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to destroy this post?' } %> |
-  <% end %>
-  <%= link_to 'Home', posts_path %>
-</p>
 
 
