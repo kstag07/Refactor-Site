@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :author, class_name: "User"
   has_many :comments
+  acts_as_votable
   include PgSearch
   pg_search_scope :search, against: [:title, :body, :language],
     using: {tsearch: {dictionary: "english"}},
