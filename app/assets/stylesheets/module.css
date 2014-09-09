@@ -166,6 +166,10 @@ select {
   fill: #da6869;
 }
 
+.vote-toggle {
+  fill: #da6869;
+}
+
 .votedown {
   width: 2em;
   height: 1em;

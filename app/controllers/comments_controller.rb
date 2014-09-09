@@ -5,12 +5,18 @@ class CommentsController < ApplicationController
 
   def upvote
     @comment.liked_by current_user
-    redirect_to @post
+    respond_to do |format|
+      format.html { redirect_to @post }
+      format.js {}
+    end
   end
 
   def downvote
     @comment.unliked_by current_user
-    redirect_to @post
+    respond_to do |format|
+      format.html { redirect_to @post }
+      format.js {}
+    end
   end
 
   def index
