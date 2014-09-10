@@ -394,7 +394,7 @@ border: 1px solid rgba(81, 203, 238, 1);
 }
 
 .originalpost-code {
-  height: 20em;
+  height: auto;
   width: 100%;
   background-color: #f9f9f9;
 }
