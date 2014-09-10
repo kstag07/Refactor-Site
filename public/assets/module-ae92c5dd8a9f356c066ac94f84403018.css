@@ -42,14 +42,21 @@
 
 /*Hero section*/
 
-.hero {
+.hero, .help-hero {
   display: flex;
   justify-content: center;
   flex-flow: column nowrap;
   align-items: center;
-  background-color: #14bbb1;
   text-align: center;
+}
+
+.hero {
+  background-color: #14bbb1;
   height: 23em;
+}
+
+.help-hero h1 {
+  padding-top: 3em;
 }
 
 .hero h1 {
@@ -128,7 +135,7 @@ select {
   margin-top: .5em;
 }
 
-.flex-posttitle h4, .flex-refactorpost h4 {
+.username {
   line-height: .2em;
   font-family: 'Source Sans Pro', sans-serif;
   padding-bottom: .4em;
@@ -157,6 +164,10 @@ select {
 
 .voteup:hover {
   fill: #da6869;
+}
+
+.vote-toggle {
+  fill: #FFFF1C;
 }
 
 .votedown {
@@ -188,11 +199,9 @@ label h3 {
 
 .user-posttitle {
   padding: .5em;
-  margin: auto;
 }
 .user-posttitleinput {
   width: 100%;
-  font-size: 2em;
   padding: 0 .2em;
 }
 
@@ -220,7 +229,7 @@ label h3 {
 
 .title-field {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column wrap;
 }
 
 .new-post input[type=text], textarea {
@@ -241,10 +250,13 @@ margin: 5px 1px 3px 0px;
 border: 1px solid rgba(81, 203, 238, 1);
 }
 
+.user-posttitleinput, .user-postcode {
+  font-size: .889em;
+}
+
 .user-postcode {
   height: 10.5em;
   width: 100%;
-  font-size: .889em;
 }
 
 
@@ -300,7 +312,7 @@ border: 1px solid rgba(81, 203, 238, 1);
   top: -100%;
   z-index: 11;
   width: 35em;
-  height: 8em;
+  height: 9.5em;
   -webkit-transform: translate(0, -500%);
   -ms-transform: translate(0, -500%);
   transform: translate(0, -500%);
@@ -371,7 +383,7 @@ border: 1px solid rgba(81, 203, 238, 1);
 /*Post View*/
 
 .postview {
-  margin-bottom: 3em;
+  margin-bottom: 0em;
 }
 
 .postview .language-tag {
@@ -417,4 +429,10 @@ border: 1px solid rgba(81, 203, 238, 1);
   align-items: flex-start;
   width: 80%;
   margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+  {.CodeRay{
+    height: 5vh;
+  }
+  }
 }

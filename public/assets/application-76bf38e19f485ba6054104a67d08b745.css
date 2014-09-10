@@ -31,8 +31,9 @@ footer p {
 
 .help {
   background: url("../Assets/svg/help_icon.svg") no-repeat;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.7em;
+  height: 1.7em;
+  margin: 0 1em;
 }
 
 button, .button {
@@ -49,6 +50,27 @@ button, .button {
   text-decoration: none;
   text-align: center;
 }
+
+a.new-post-button  {
+  font-family: 'Open Sans', sans-serif;
+  font-size: .8em;
+  text-decoration: none;
+  padding: 0 .5em;
+}
+
+.new-post-button {
+  height: 1.3em;
+  background-color: #14bbb1;
+  color: white;
+  text-transform: uppercase;
+  padding: 0 .1em;
+  margin: 0 .1em;
+  border: .125em solid #14bbb1;
+  border-radius: .3em;
+  text-align: center;
+}
+
+
 
 .flex-button{
   display: flex;
@@ -90,7 +112,7 @@ button, .button {
   height: 2.925em;
 }
 
-.logo {
+.refactors_logo {
   width: auto;
   height: 4.39em;
 }
@@ -99,15 +121,11 @@ button, .button {
   display: flex;
   align-content: center;
   flex-flow: row wrap;
-  flex-align: center;
+  align-items: center;
   justify-content: space-between;
   padding-right: .5em;
 }
 
-.nav a {
-  text-decoration: none;
-  font-size: 1em;
-}
 
 .search {
   color: white;
@@ -130,13 +148,13 @@ button, .button {
 .submit {
 width: 1.1em;
 height: 1.1em;
-margin: 0 2em .3em 0;
+margin-bottom: .3em;
 vertical-align: bottom;
 }
 
 .account {
-  padding: 0 2em;
-  font-family:
+  padding: 0 1em;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .login {
@@ -147,6 +165,10 @@ vertical-align: bottom;
   color: #da6869;
 }
 
+.signout {
+  color: #da6869;
+}
+
 @media all and (max-width: 54em) {
   .nav {
     display: none;
@@ -154,6 +176,29 @@ vertical-align: bottom;
 }
 
 /**/
+
+ul {
+  list-style-type: circle;
+  margin: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+ul li {
+  text-align: left;
+  font-size: .889em;
+}
+
+.help-hero article {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.help-hero div {
+  width: 36%;
+}
 /*Hero text animation*/
 
 #herotext {
@@ -198,14 +243,21 @@ vertical-align: bottom;
 
 /*Hero section*/
 
-.hero {
+.hero, .help-hero {
   display: flex;
   justify-content: center;
   flex-flow: column nowrap;
   align-items: center;
-  background-color: #14bbb1;
   text-align: center;
+}
+
+.hero {
+  background-color: #14bbb1;
   height: 23em;
+}
+
+.help-hero h1 {
+  padding-top: 3em;
 }
 
 .hero h1 {
@@ -284,7 +336,7 @@ select {
   margin-top: .5em;
 }
 
-.flex-posttitle h4, .flex-refactorpost h4 {
+.username {
   line-height: .2em;
   font-family: 'Source Sans Pro', sans-serif;
   padding-bottom: .4em;
@@ -313,6 +365,10 @@ select {
 
 .voteup:hover {
   fill: #da6869;
+}
+
+.vote-toggle {
+  fill: #FFFF1C;
 }
 
 .votedown {
@@ -344,11 +400,9 @@ label h3 {
 
 .user-posttitle {
   padding: .5em;
-  margin: auto;
 }
 .user-posttitleinput {
   width: 100%;
-  font-size: 2em;
   padding: 0 .2em;
 }
 
@@ -376,7 +430,7 @@ label h3 {
 
 .title-field {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column wrap;
 }
 
 .new-post input[type=text], textarea {
@@ -397,10 +451,13 @@ margin: 5px 1px 3px 0px;
 border: 1px solid rgba(81, 203, 238, 1);
 }
 
+.user-posttitleinput, .user-postcode {
+  font-size: .889em;
+}
+
 .user-postcode {
   height: 10.5em;
   width: 100%;
-  font-size: .889em;
 }
 
 
@@ -456,7 +513,7 @@ border: 1px solid rgba(81, 203, 238, 1);
   top: -100%;
   z-index: 11;
   width: 35em;
-  height: 8em;
+  height: 9.5em;
   -webkit-transform: translate(0, -500%);
   -ms-transform: translate(0, -500%);
   transform: translate(0, -500%);
@@ -527,7 +584,7 @@ border: 1px solid rgba(81, 203, 238, 1);
 /*Post View*/
 
 .postview {
-  margin-bottom: 3em;
+  margin-bottom: 0em;
 }
 
 .postview .language-tag {
@@ -573,6 +630,12 @@ border: 1px solid rgba(81, 203, 238, 1);
   align-items: flex-start;
   width: 80%;
   margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+  {.CodeRay{
+    height: 5vh;
+  }
+  }
 }
 header {
   background-color: #3c4a5b;
@@ -981,42 +1044,12 @@ div.field, div.actions {
   background-color: white;
   border: .13em solid #14bbb1;
 }
-html {font-size: 1.25em;}
 
-body {
+.new-post-button:hover {
+  color: #14bbb1;
   background-color: white;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.45;
-  color: #333;
+  border: .13em solid #14bbb1;
 }
-
-p {
-  font-family: 'Source Sans Pro', sans-serif;
-  margin-bottom: 1.3em;}
-
-h1, h2, h3, h4 {
-  margin: 1.414em 0 0.5em;
-  font-family: open sans;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-h1 {
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 0;
-  font-size: 1.602em;
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 1.424em;}
-
-h3 {font-size: 1.266em;}
-
-h4 {font-size: 1.125em;}
-
-p, small, .font_small {font-size: 0.889em;}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
