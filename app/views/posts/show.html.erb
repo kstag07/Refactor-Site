@@ -29,41 +29,7 @@
 <div class="post-refactors">
   <article>
     <div class="flex-postcontainer">
-
-<!-- Each of the "refactorpost" is an individual user generated refactor -->
-      <% @post.comments.each do |comment| %>
-        <% unless comment.new_record? %>
-          <section class="refactorpost">
-            <div class="flex-vote">
-              <a>
-                <%= link_to "Upvote", upvote_post_comment_path(@post, comment), method: :put %>
-                <svg class="voteup" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 26.279 13.502" enable-background="new 0 0 26.279 13.502" xml:space="preserve">
-                <polygon points="0,13.5 13.1,0 26.3,13.5"/>
-                </svg>
-              </a>
-              <span class="votecounter"><%= comment.votes_for.size %></span>
-              <a>
-                <svg class="votedown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 26.279 13.502" enable-background="new 0 0 26.279 13.502" xml:space="preserve">
-                <polygon points="26.3,0 13.1,13.5 0,0"/>
-                </svg>
-                <%= link_to "Downvote", downvote_post_comment_path(@post, comment), method: :put %>
-              </a>
-            </div>
-            <div class="flex-refactorpost">
-              <h4 class="username"><%= link_to comment.author.name, user_path(id: comment.author), class: "username" %></h4>
-              <pre class="refactorpost-code">
-                <%= markdown comment.content %>
-              </pre>
-              <p>
-                <% if current_user.present? && (current_user.mod? || (current_user.author? &&  @post.author == current_user)) %>
-                <%= link_to 'Edit Refactor |', edit_post_comment_path(@post, comment) %>
-                <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-            </div>
-          </section>
-        <% end %>
-      <% end %>
-
+      <%= render 'comment' %>
     </div>
   </article>
 </div>
