@@ -36,33 +36,9 @@
       </section>
 
       <div class="flex-postcontainer">
-        <% @posts.each do |post| %>
-          <section class="refactorpost", id="<%= dom_id(post) %>">
-            <div class="flex-vote">
-              <a>
-                <%= link_to "Upvote", upvote_post_path(post), method: :put %>
-                <svg class="voteup" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 26.279 13.502" enable-background="new 0 0 26.279 13.502" xml:space="preserve">
-                <polygon points="0,13.5 13.1,0 26.3,13.5"/>
-                </svg>
-
-              </a>
-              <span class="votecounter"><%= post.votes_for.size %></span>
-              <a>
-                <svg class="votedown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 26.279 13.502" enable-background="new 0 0 26.279 13.502" xml:space="preserve">
-                <polygon points="26.3,0 13.1,13.5 0,0"/>
-                </svg>
-                <%= link_to "Downvote", downvote_post_path(post), method: :put %>
-              </a>
-            </div>
-            <div class="flex-posttitle">
-              <h3><%= link_to post.title, post %></h3>
-              <h4 class="username">By: <%= link_to post.author.name, user_path(id: post.author), class: "username" %></h4>
-              <a class="language-tag"><%= Post::LANGUAGE_OPTIONS[post.language] %></a>
-            </div>
-
-          </section>
-        <% end %>
+        <%= render 'post' %>
       </div>
+      
     </article>
   </main>
   <div class="minheight"></div>

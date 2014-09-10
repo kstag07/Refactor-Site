@@ -1,9 +1,9 @@
-$('post-<%=@post.id%>').html('<%= @post.votes_for.size %>');
+$("votecounter-<%= @post.id %>").html('<%= @post.votes_for.size %>');
 
-$('.voteup').click(function() {
-  $('.vote-counter').text()
-  $(this).toggleClass('vote-toggle')
-  if ($('.votedown').hasClass('.vote-toggle') {
-    $('.votedown').toggleClass('vote-toggle')
-  });
-});
+// $('.voteup').click(function() {
+//   $('.vote-counter').text()
+//   $(this).toggleClass('vote-toggle')
+//   if ($('.votedown').hasClass('.vote-toggle') {
+//     $('.votedown').toggleClass('vote-toggle')
+//   });
+// });
