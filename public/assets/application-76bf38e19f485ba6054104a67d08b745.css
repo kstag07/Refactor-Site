@@ -367,6 +367,10 @@ select {
   fill: #da6869;
 }
 
+.vote-toggle {
+  fill: #FFFF1C;
+}
+
 .votedown {
   width: 2em;
   height: 1em;
@@ -611,7 +615,7 @@ border: 1px solid rgba(81, 203, 238, 1);
 }
 
 .refactorpost-code {
-  height: 15em;
+  height: auto;
   width: 100%;
   background-color: #f9f9f9;
   margin-bottom: 2em;
@@ -626,6 +630,12 @@ border: 1px solid rgba(81, 203, 238, 1);
   align-items: flex-start;
   width: 80%;
   margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+  {.CodeRay{
+    height: 5vh;
+  }
+  }
 }
 header {
   background-color: #3c4a5b;
@@ -955,7 +965,7 @@ table {
 }
 .highlight {
   background-color: #f8f8f8;
-}/* line 1, /Users/m/repos/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+}/* line 1, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
 body {
   background-color: #fff;
   color: #333;
@@ -964,47 +974,47 @@ body {
   line-height: 18px;
 }
 
-/* line 9, /Users/m/repos/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+/* line 9, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
-/* line 15, /Users/m/repos/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+/* line 15, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
 
-/* line 21, /Users/m/repos/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+/* line 21, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
 a {
   color: #000;
 }
-/* line 23, /Users/m/repos/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+/* line 23, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
 a:visited {
   color: #666;
 }
 
-/* line 33, /Users/m/repos/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+/* line 33, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-/* line 38, /Users/m/repos/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+/* line 38, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
 #notice {
   color: green;
 }
 
-/* line 42, /Users/m/repos/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+/* line 42, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 48, /Users/m/repos/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+/* line 48, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -1013,7 +1023,7 @@ div.field, div.actions {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 55, /Users/m/repos/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+/* line 55, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -1024,7 +1034,7 @@ div.field, div.actions {
   background-color: #c00;
   color: #fff;
 }
-/* line 65, /Users/m/repos/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
+/* line 65, /home/anthony/code_fellows/Refactor-Site/app/assets/stylesheets/scaffolds.css.scss */
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
@@ -1040,42 +1050,6 @@ div.field, div.actions {
   background-color: white;
   border: .13em solid #14bbb1;
 }
-html {font-size: 1.25em;}
-
-body {
-  background-color: white;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.45;
-  color: #333;
-}
-
-p {
-  font-family: 'Source Sans Pro', sans-serif;
-  margin-bottom: 1.3em;}
-
-h1, h2, h3, h4 {
-  margin: 1.414em 0 0.5em;
-  font-family: open sans;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-h1 {
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 0;
-  font-size: 1.602em;
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 1.424em;}
-
-h3 {font-size: 1.266em;}
-
-h4 {font-size: 1.125em;}
-
-p, small, .font_small {font-size: 0.889em;}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
