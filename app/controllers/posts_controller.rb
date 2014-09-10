@@ -4,12 +4,18 @@ class PostsController < ApplicationController
 
   def upvote
     @post.liked_by current_user
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js {}
+    end
   end
 
   def downvote
     @post.unliked_by current_user
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js {}
+    end
   end
 
   # GET /posts
