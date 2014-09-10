@@ -8,3 +8,21 @@
 # ['author', 'mod'].each do |role|
 #   Role.find_or_create_by(name: role)
 # end
+
+10.times do |n|
+  User.create(email: "fake#{n}@example.com",
+  password: "asdfasdf",
+  password_confirmation: "asdfasdf",
+  name: Faker::Name.first_name)
+end
+
+@post = Post.create(title: "fake",
+  body: "fake",
+  author_id: 1,
+  language: "Ruby")
+
+
+# @post = Post.create(title: Faker::App.name,
+#   body: Faker::Lorem.paragraph,
+#   author_id: rand(1..10),
+#   language: %w[Ruby HTML C++ Python PHP Javascript][rand(6)])

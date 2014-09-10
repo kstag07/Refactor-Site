@@ -11,6 +11,7 @@ gem 'figaro'
 gem 'coderay'
 gem 'pg_search', '~> 0.7.3'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'faker', '~> 1.4.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
